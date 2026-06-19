@@ -27,16 +27,17 @@ Do not default to implementation just because the user asks for a `/goal`. Treat
 ## Workflow
 
 1. Identify the autonomous outcome and horizon: what would make the next task or session genuinely complete?
-2. Pull in only the essential context from current docs, code, lessons, and recent findings; cite volatile findings through artifact paths rather than freezing them as conclusions.
-3. State the default harness when relevant. Do not hard-code an OpenCode model unless the task is explicitly about comparing or overriding models; the project default should choose DeepSeek v4 Flash through local config/auth/env:
+2. Identify any decision-critical unknowns that would materially change the goal. Resolve cheap missing research first from local docs, code, logs, recent findings, or targeted external sources when current facts matter. Do not add a research pass as ceremony: skip it when the goal is already well-constrained. If the missing research is substantial, make the goal an investigation or validation goal instead of burying the research inside goal drafting.
+3. Pull in only the essential context from current docs, code, lessons, and recent findings; cite volatile findings through artifact paths rather than freezing them as conclusions.
+4. State the default harness when relevant. Do not hard-code an OpenCode model unless the task is explicitly about comparing or overriding models; the project default should choose DeepSeek v4 Flash through local config/auth/env:
 
 ```sh
 opencode run --agent build
 ```
 
-4. Include links to deeper docs only as backup, not as the primary source of truth.
-5. Name required artifacts, telemetry, tests, and stop conditions.
-6. For task goals, keep completion tied to the bounded unit of work. For session charters, include continuation criteria and mission-level stop conditions.
+5. Include links to deeper docs only as backup, not as the primary source of truth.
+6. Name required artifacts, telemetry, tests, and stop conditions.
+7. For task goals, keep completion tied to the bounded unit of work. For session charters, include continuation criteria and mission-level stop conditions.
 
 ## Goal Shape
 
@@ -94,6 +95,7 @@ Persist evidence, decisions, telemetry, intermediate artifacts, and a final miss
 
 - The goal should be understandable without reading the prior thread.
 - Include all non-obvious constraints that would be costly to rediscover.
+- Do not encode stale assumptions as instructions. If a current fact, command, endpoint, artifact path, or external state is decision-critical and uncertain, verify it or make the uncertainty explicit in the goal.
 - Distinguish hard requirements from optional refinements.
 - Mention budget/resource behavior when the task touches agentic processing.
 - Avoid vague instructions such as "improve", "make robust", or "think carefully" unless paired with concrete mechanisms.
