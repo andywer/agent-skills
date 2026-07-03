@@ -5,7 +5,7 @@ description: Use when drafting a /goal for Codex or OpenCode autonomous work, es
 
 # Codex Goal Writing
 
-Draft goals that are self-contained work contracts for Codex or OpenCode. Match the goal's size to the user's intended autonomy horizon: sometimes the right goal is one bounded task, and sometimes it is a session charter that lets an agent work through multiple leases, pivots, and evidence branches without relying on conversation history. Include the critical constraints, intended behavior, verification expectations, and key artifact paths directly in the goal.
+Draft goals that are self-contained work contracts for Codex or OpenCode. Match the goal's size to the user's intended autonomy horizon: sometimes the right goal is one bounded task, and sometimes it is a session charter that lets an agent work through multiple leases, pivots, and evidence branches without relying on conversation history. Include the critical constraints, intended behavior, proof boundary, and key artifact paths directly in the goal.
 
 ## First Size The Goal
 
@@ -38,6 +38,8 @@ opencode run --agent build
 5. Include links to deeper docs only as backup, not as the primary source of truth.
 6. Name required artifacts, telemetry, tests, and stop conditions.
 7. For task goals, keep completion tied to the bounded unit of work. For session charters, include continuation criteria and mission-level stop conditions.
+
+Before treating verification as a completion condition, ask what proof would actually close the goal and whether that proof is local, approval-gated, or externally unavailable. If the necessary proof depends on live credentials, device access, networked model runs, private-data policy, or another external gate, either make the gate explicit in the goal or define the local readiness artifact the agent should preserve before stopping blocked.
 
 ## Goal Shape
 
@@ -91,11 +93,16 @@ Run an incremental loop: inspect current evidence, choose the highest-value fron
 Persist evidence, decisions, telemetry, intermediate artifacts, and a final mission-level recommendation. Verify code changes with <tests>.
 ```
 
+For large charters, keep the goal as the mission contract, not the whole runbook. Include the decision spine, hard boundaries, required artifacts, proof boundary, and stop conditions. Put volatile checklists, detailed procedures, and background rationale in cited docs unless they are needed to prevent an immediate wrong turn.
+
+When the user asks for delegation or the work clearly depends on parallel agents, make delegation concrete: assign responsibilities by work type, require evidence from delegates, and keep orchestration, reconciliation, final edits, and verification owned by the main agent.
+
 ## Quality Bar
 
 - The goal should be understandable without reading the prior thread.
 - Include all non-obvious constraints that would be costly to rediscover.
 - Do not encode stale assumptions as instructions. If a current fact, command, endpoint, artifact path, or external state is decision-critical and uncertain, verify it or make the uncertainty explicit in the goal.
+- Distinguish implementation progress from proof of completion. If full proof is gated by user action, live services, device access, tenant policy, or other unavailable state, say what local evidence should be preserved and what exact blocker prevents completion.
 - Distinguish hard requirements from optional refinements.
 - Mention budget/resource behavior when the task touches agentic processing.
 - Avoid vague instructions such as "improve", "make robust", or "think carefully" unless paired with concrete mechanisms.
