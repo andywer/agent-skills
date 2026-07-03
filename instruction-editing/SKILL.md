@@ -32,6 +32,8 @@ Name the mistaken frame before changing text. Common frames:
 - current baseline mistaken for a hard boundary;
 - product-code change mistaken for approval by default;
 - role-local stop mistaken for autonomous-session stop;
+- local progress mistaken for verified completion;
+- an external access or approval gate mistaken for more local work to grind through;
 - abstract challenge language drifting away from lived product behavior;
 - branch or state file treated as ceremony rather than a handoff aid.
 
