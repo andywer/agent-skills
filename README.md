@@ -8,7 +8,7 @@ Included skills:
 - `goal-writing`
 - `agent-managed-indexes`
 - `working-state-refresh`
-- `recursive-exploration-map`
+- `exploration-map`
 - `paper-process-walkthrough`
 - `recursive-zoom-exploration`
 
