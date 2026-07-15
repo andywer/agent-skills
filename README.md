@@ -7,6 +7,7 @@ Included skills:
 - `instruction-editing`
 - `goal-writing`
 - `agent-managed-indexes`
+- `environment-first`
 - `working-state-refresh`
 - `exploration-map`
 - `paper-process-walkthrough`
