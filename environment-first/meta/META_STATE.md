@@ -13,6 +13,7 @@ This file is maintenance context for people or agents editing the `environment-f
 - Keep the top agent a lean executive and integrator: preserve intent, select the next value-changing action, accept results, and close.
 - Work directly when that is the simplest reliable path; delegate only when separate context adds value.
 - Manage workers and controls by exception rather than continuous monitoring.
+- When plausible endpoints can mask materially different interpretations or methods, obtain one cheapest useful early signal of direction toward intended use, then leave routine work autonomous. Keep direction distinct from liveness and task-native evidence of effects.
 - Keep routine coordination quiet: decision-relevant information may flow without acknowledgement or an approval gate; only material boundaries pause work.
 - Distinguish passive observation, lightweight liveness probes, follow-up or turn transitions, interruption, and cancellation; after decision-relevant silence, a capable orchestrator may choose a one-off cheapest reliable probe rather than wait categorically.
 - Preserve terminal partial-return and deliberate resume as the portable fallback for a child-originated material decision request when a suitable live return channel is unavailable or delay is long; this does not make parent-to-child liveness probes useless.
@@ -23,6 +24,7 @@ This file is maintenance context for people or agents editing the `environment-f
 - Use context freshness selectively: warm same-unit repair may save reconstruction; fresh review preserves independence where it matters.
 - Keep detailed coordination state off the top agent's orientation and on the surfaces that actually consume it.
 - Use sparse trace-referenced operations reflection as an advisory aid, not a persistent monitor or liveness guarantee.
+- Treat bounded `agent-introspect` use as an optional Codex optimization: `whoami` identifies the invoking parent for self-reflection; inspect a worker only through its exact passed/captured reference or lineage/session discovery from that parent, never cwd, workspace, or recency. Inspect metadata or spans first, expand only as needed, and retain a harness-native fallback or another cheap directional signal when worker identity is unavailable.
 - Close proportionately; a fresh final reviewer is required by integration risk, not by entry into a named mode.
 
 ## Decisions taken
@@ -38,6 +40,8 @@ This file is maintenance context for people or agents editing the `environment-f
 - Replace a terminal-only delegated-decision frame with a portable live-coordination baseline and a Codex-specific optimization that uses noninterrupting messaging and passive observation.
 - Treat task-native external-state evidence, not agent prose, as proof of consequential external effects.
 - Correct the post-update passive-only liveness reflex: missing known bidirectional delivery narrows a child's live decision-request path, but does not prohibit a proportionate parent-to-child status probe after an actual coordination anomaly.
+- Add a direction-alignment reflex for plausible-but-unusable delegated results without introducing routine checkpoints, status cadence, decision diaries, a persistent role, or a mandatory artifact.
+- Keep parent self-reflection distinct from worker direction inspection: never mislabel a parent trace as worker evidence when an exact child session cannot be established.
 
 ## Open questions
 

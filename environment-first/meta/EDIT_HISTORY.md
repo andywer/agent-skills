@@ -2,6 +2,33 @@
 
 This file is a high-level maintenance history for the `environment-first` skill. It is not operative guidance and must not be loaded as a task instruction source. Entries summarize implemented changes and their rationale; they are not diffs.
 
+## 2026-08-06 — Detect semantic direction drift before plausible endpoints compound
+
+Added a compact delegation reflex for cases where materially different
+interpretations or methods can produce similarly plausible finished-looking
+results: obtain one cheapest useful early signal that the work still serves its
+intended use, then leave routine work autonomous. Briefs now preserve intended
+use and ask workers to surface only material changes in interpretation, method,
+workaround, or verification that could make a result unusable. The signal is
+explicitly distinct from liveness and from task-native evidence of external
+effects.
+
+Made `agent-introspect` a Codex-only optional optimization for sparse
+session-referenced reflection: `whoami` identifies the invoking parent for
+self-reflection, while delegated-worker direction inspection requires an exact
+worker reference passed or captured by the harness, or lineage/session
+discovery from the exact parent identity. Never infer a child from cwd,
+workspace, or recency; if its exact reference is unavailable, use another cheap
+directional signal. Begin with metadata or a span and expand only as needed.
+This is not a portable requirement, a reason to read full traces routinely, or
+evidence that an external effect occurred.
+
+Why: delegated results were superficially plausible yet missed the original
+intended use, and a result-only review could reproduce the packet's literal but
+wrong frame. Rejected the nearby overcorrections: continuous monitoring,
+mandatory checkpoints, exhaustive decision logs, fixed status cadence, a new
+persistent role, or a required coordination artifact.
+
 ## 2026-08-06 — Correct the passive-only liveness interpretation
 
 Clarified that routine work remains autonomous and does not need heartbeats,

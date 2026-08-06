@@ -62,6 +62,8 @@ Prefer one active worker when one is enough. Parallelize disjoint work only when
 
 Give a worker the unit's scope, why it matters, what done means, what is out of scope, the relevant sources, and the evidence to return. Add a budget only when cost, time, attempts, or blast radius can change the decision. See `references/subagent-brief.md` when the dispatch is consequential or non-trivial.
 
+When materially different interpretations or methods could reach similarly plausible endpoints, a finished-looking delegated result can still be insufficient. Obtain one cheapest useful early signal that the work remains directed at its intended use—such as a small result-surface check, a concise interpretation or method reflection, or a decision-relevant intermediate—then leave routine work autonomous. This is neither liveness evidence nor proof of task effects; assess those separately from their natural surfaces. Do not turn it into mandatory checkpoints, decision diaries, or status cadence.
+
 Use context freshness selectively:
 
 - keep the same worker warm for a bounded repair when the objective and result surface are unchanged;
@@ -80,7 +82,7 @@ On long or agent-heavy work, occasionally delegate a fresh read-only review of t
 
 Ask the observer to assess objective alignment, concrete progress, proportionality of the operating approach, and closeout readiness, then return a short evidence-grounded assessment and at most one intervention. The observer does not manage workers, maintain project state, or become persistent. This is an aid to reflection, not a liveness guarantee; the top agent remains responsible for invoking it.
 
-Use harness-native call-by-reference when available. For Codex, follow the session-log guidance in `harness-defaults/codex-gpt-5.6.md`; do not paste a trace tail into the parent context.
+Use harness-native call-by-reference when available. For Codex, follow the bounded session-reference guidance in `harness-defaults/codex-gpt-5.6.md`; do not paste a trace tail into the parent context.
 
 ## Execute the minimum loop
 

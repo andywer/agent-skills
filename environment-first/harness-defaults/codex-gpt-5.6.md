@@ -18,13 +18,13 @@ Keep routine work quiet. A nonblocking informational update may state a fact, mi
 
 Messages, lifecycle state, and terminal agent prose establish coordination facts, not consequential external effects. Establish those effects from task-native evidence on the affected system.
 
-## Trace-referenced operations reflection
+## Bounded session-referenced operations reflection
 
-When a long or agent-heavy run reaches a high-leverage reflection boundary, find the current parent session-log path and pass that path by reference to a fresh read-only observer. Do not paste a trace tail into the parent or observer prompt.
+When a long or agent-heavy run reaches a high-leverage reflection boundary, optionally use `agent-introspect` as a Codex optimization when it is available. For reflection on the top agent itself, establish the invoking parent's exact current-session identity with `agent-introspect whoami --json`, then pass its normalized reference to a fresh read-only observer. For direction inspection of a delegated worker, do not treat that `whoami` result as the child: use an exact normalized worker-session reference already passed or captured by the harness, or resolve the child through lineage or session discovery from the exact parent identity. Never guess a child identity from cwd, workspace, or recency. Start metadata, overview, or an operational span against the selected target, expand only as needed, and do not routinely read or paste a full trace. If no exact worker reference can be established, use another cheap task-native or worker-supplied directional signal rather than inspect a parent trace and label it worker evidence. If the tool or adapter is unavailable, use the smallest suitable harness-native reference mechanism instead; this is not a hard dependency.
 
-Ask the observer to use `codex-trace` to locate the current task phase, begin with the recent operations, and expand backward only when needed. It should assess objective alignment, concrete object-level progress, proportionality of coordination, repeated repair, and closeout readiness. Require a short evidence-grounded assessment and at most one intervention.
+Ask the observer to locate the current task phase from the reference, begin with recent operations, and expand backward only when needed. It should assess objective alignment, concrete object-level progress, proportionality of coordination, repeated repair, and closeout readiness. Require a short evidence-grounded assessment and at most one intervention.
 
-The observer does not edit files, manage workers, or become persistent. Invoke it sparsely: before increasing coordination complexity, after repeated unsuccessful repair, or before closing a consequential long run. This mechanism cannot detect a top agent that never invokes it and is not a liveness guarantee.
+The observer does not edit files, manage workers, or become persistent. Invoke it sparsely: before increasing coordination complexity, after repeated unsuccessful repair, or before closing a consequential long run. Session metadata, spans, and trace content support reflection only; they do not prove external task effects, which require task-native evidence. This mechanism cannot detect a top agent that never invokes it and is not a liveness guarantee.
 
 ## Execution accounting
 

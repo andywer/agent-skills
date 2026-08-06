@@ -16,6 +16,8 @@ Give the worker:
 
 Add a budget only when cost, time, attempts, or blast radius can change continuation. If repeated or metered consequential execution is allowed, attach the relevant execution lease; a worker's prose budget does not constrain an external operation it launches.
 
+When different interpretations, methods, or workarounds could produce similarly plausible endpoints, obtain one cheap early signal that the unit still serves its intended use. Ask the worker to surface a material change in interpretation, method, workaround, or verification that could make the result unusable; ordinary choices remain the worker's. This is not a routine checkpoint, decision diary, or liveness report, and it does not establish task effects.
+
 Do not require a schema, packet file, receipt, or full conversation reconstruction unless a real downstream consumer needs it.
 
 ## Context freshness is a tool
