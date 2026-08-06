@@ -1,60 +1,57 @@
-# The subagent brief
+# Bounded subagent briefs
 
-A dispatch is a small environment you build for a subagent. The brief is what shapes it. A good brief makes the work doable from empty context and the review easy; a bad brief leaks your conversation into the subagent and hides drift. This file is the contract for both the top agent (who writes briefs) and the subagent (who works or reviews under one).
+Use a subagent when separate context adds real value: the work is bulky, self-contained, independently verifiable, or needs an unanchored challenge. Work directly when the brief would cost as much context as the unit saves.
 
-## What a brief must contain
+A brief may be an inline dispatch message. Make it durable only when it must survive compaction, cross an ownership boundary, support later promotion, or remain auditable.
 
-Whether the unit is production or review, the brief is self-contained:
+## What the worker needs
 
-- **Scope** — one specific thing to do, bounded. Not a direction ("look into caching") but a unit ("determine whether the read path caches X, and cite where").
-- **Why it matters** — the relevant slice of the objective and how the result will be used. If the unit's instructions seem to conflict with this intent, the subagent flags it rather than guessing.
-- **Done condition** — what must be true for the unit to count as complete: acceptance criteria and the checks a reviewer will apply.
-- **Return contract** — the exact shape of what comes back: direct edits, a proposal, an answer plus sources, plus any evidence the unit must emit (test transcript, diff, schema-valid file, quoted source). Contracts that force reflection beat "return the answer."
-- **Out of scope** — what not to touch. This is how the top agent keeps units from silently growing.
-- **Budget** — a bound in units the worker can count: files touched, attempts, tool calls, sources read. Hitting it is a return trigger, not a failure. The top agent may separately enforce an elapsed-time or token ceiling it can observe; label that as an external guard with an explicit accounting basis rather than assigning it to the worker. If the unit may launch repeated, externally metered, materially long-running, or consequential operations, attach an execution lease from `execution-leases.md` to that operation or explicitly prohibit it. A worker budget does not bound the downstream operation it can launch.
-- **Fan-out grant** (only when the unit is legitimately wide) — explicit permission for one level of sub-workers: "map over these N items; return only the reduction plus per-item evidence pointers." Absent this grant, no sub-workers.
-- **Relevant state** — the specific files or artifacts to read. Not "see the conversation" — name them.
+Give the worker:
 
-For a repair, name the immutable defect-delta handoff and its verified input/result index. Include only the prior verdict, provenance status, ownership boundary, acceptance checks, and retry/attempt state that the unit needs. The worker retains access to every authorized source required for reasoning; the handoff is not a substitute for that evidence.
+- **Scope** — one bounded result to produce.
+- **Intent** — why it matters and how the result will be used.
+- **Done** — the acceptance condition and evidence that must return.
+- **Boundaries** — what not to touch or decide.
+- **Sources** — the exact files, artifacts, interfaces, or links needed.
 
-If a brief can't be made self-contained without pasting the whole conversation, either the unit is wrong or the needed context is trapped in conversation. Externalize it first: accumulated decisions belong in the game plan's decisions log, where a brief can point at them. Split or re-scope only if the unit still doesn't cohere. Don't fix it by leaking context.
+Add a budget only when cost, time, attempts, or blast radius can change continuation. If repeated or metered consequential execution is allowed, attach the relevant execution lease; a worker's prose budget does not constrain an external operation it launches.
 
-## Empty context by default
+Do not require a schema, packet file, receipt, or full conversation reconstruction unless a real downstream consumer needs it.
 
-Workers and reviewers start from empty context and work only from the brief and the files it names. The value of a fresh context is that it hasn't anchored on anyone's conclusion — that's exactly what makes a review worth having. So:
+## Context freshness is a tool
 
-- Don't hand a worker your reasoning as ambient truth; hand it the task.
-- Don't hand a reviewer the worker's rationale, confidence, or a desired verdict as background. If those claims need checking, pass them as **explicitly labeled artifacts to review**, not as briefing.
-- Warm continuation is optional and harness-supported, not the default. Permit it only for the same named unit when objective, stage, required/observed provenance, input and artifact identities, model/system instructions, runtime/tool state, mutable environment, ownership boundary, and acceptance contract are unchanged and attestable. Otherwise use a fresh worker. A warm worker cannot review or promote its own work, and any local retirement threshold must be justified by the harness experiment.
+Keep a worker warm for repair of the same bounded unit when the objective, sources, result surface, permissions, and acceptance condition remain materially unchanged. Give it the specific defect and required correction; do not rebuild the whole packet merely to preserve ceremony.
 
-## Worker contract
+Use a fresh context when independence is the point: consequential review, frame challenge, or materially different work. A fresh reviewer receives the governing task, current result, relevant result surface, and evidence. Do not provide the producer's confidence or desired verdict as ambient truth.
 
-You produce the assigned result; you do not own the plan. A different agent will review your output. Make that review easy.
+Freshness does not compensate for missing sources, an incoherent unit, or a weak verification rule.
 
-- Work from the brief and its named files. If the brief is missing something you need, **say so** — that's a brief problem, not something to patch with a guess.
-- Produce what the return contract asks for, plus a short summary of what you did and any evidence you generated.
-- For an instrumented repair unit, return the unit and attempt identifiers, defect delta addressed, inputs/artifacts consumed, observed provenance, files touched, acceptance results, unresolved mismatches, and any unavailable required field. Cite the immutable handoff; do not rewrite it. For uninstrumented direct work, retain the existing proportionate return contract.
-- **Do not expand the unit.** If you find something out of scope, note it as a side finding and let the top agent decide. Don't make broad unrequested edits.
-- Anchor claims to observables — the failing check, the quoted source, the exact error — not to introspection about what you think is true.
-- When a granted execution lease applies, return the observed accounting basis, units attempted and completed, stop signals, renewal decisions, and unknown counters. Do not substitute self-reported estimates for harness counters.
+## Worker return
 
-### When you can't finish
+Return:
 
-Return early with a **partial result** when you're blocked (a missing fact, an uncooperative environment, a decision only the user can make) or when the unit is simply too big for its budget. Name precisely what's done, what remains, and what would unblock it.
+- the requested result or edits;
+- the evidence named by the brief;
+- a short statement of what remains uncertain or blocked.
 
-If the unit is too large, **do not promote yourself to orchestrator.** Unless your brief carries an explicit fan-out grant — in which case stay within the granted level and return only the reduction plus per-item evidence pointers — return the partial plus a **decomposition proposal**: how you'd split the remaining work into units. The top agent holds the map and decides whether to split, re-scope, or escalate. A precise partial plus a clean proposal is a good result, not a failure.
+Stay inside scope. Return a partial result when the unit cannot finish, naming what is done, what remains, and what would unblock it. Do not silently become an orchestrator. Fan out only when the brief explicitly permits bounded, disjoint sub-work and names the reduction expected back.
 
-### On a revise
+Keep routine coordination quiet. A nonblocking informational update may state a fact, milestone, or reply; it neither needs acknowledgement nor pauses work or creates an approval gate. A question that needs a decision is a decision request, not an informational update. Continue ordinary work after it; stop only at a material decision, safety, scope, acceptance, or evidence boundary.
 
-A revise verdict names specific things to change. Address each one explicitly, or say why you can't. Don't silently redo the work — that discards the review's signal. Never edit the review verdict; produce repaired or superseding work for a reviewer to assess in a new verdict.
+When an observed fact makes a brief boundary conflict with its intent, a material workaround or scope expansion would be required, or two reasonable readings would produce materially different accepted results, stop safely before proceeding. A worker that needs an upstream decision may use a live decision request only on an already-known capability set that provides noninterrupting bidirectional delivery and passive waiting; otherwise, including a terminal-only or unconfirmed interface or a long delay, return `AWAITING_ORCHESTRATOR` as a terminal partial. Include only the conflicting instruction and observation, the smallest viable options and consequences, the safe partial state, and a recommendation.
 
-## Reviewer contract
+The parent answers or revises the brief, then resumes the same worker and context when the objective, sources, result surface, permissions, and acceptance condition remain materially unchanged. Otherwise return the partial as blocked and re-dispatch deliberately. Do not pause for routine status, optional refinements, questions already answered by the brief, or ambiguity that does not change acceptance, blast radius, or verification.
 
-You check a result before the top agent accepts it. You do not produce work product and you do not integrate; you issue a verdict.
+On repair, address the named defects or explain precisely why one cannot be addressed. Do not edit an independent verdict; produce repaired or superseding work.
 
-- You are a *different* agent from the worker, on a fresh context. If you helped produce the result, recuse.
-- You receive: the produced result (edits, diff, proposal, answer, artifacts), the brief that governs it, and the current result surface. You do **not** receive the worker's rationale as truth.
-- Walk the done condition. For each criterion: pass, fail, or n/a, with one line of evidence (a path, a quote, an artifact, a command result). Check internal consistency, fit with scope, and whether the required evidence actually exists and actually supports the claim — verify the residue rather than re-deriving it, unless it's missing or suspect.
-- Rank evidence honestly: a machine-checked artifact (a passing run, a diff, a validation) outranks your own reading. Your fresh context removes anchoring on the worker's conclusion — it does not remove the blind spots you share with the worker as instances of the same model.
-- Issue one verdict: **accept** (sound, ready), **revise** (specific fixable issues — list every one; a revise without a list is hand-waving), or **reject** (fundamentally unsound: wrong scope, bad method, decisive contrary evidence).
-- Don't produce the fix yourself, don't soften a verdict to keep things moving, and don't invent issues on a sound result. Put the verdict on disk — not only in chat, and not inside the game plan: closeout rebuilds state from verdicts *without* using the plan, so verdicts must exist independently of it. Treat prior verdicts as append-only evidence; write a new verdict for a repaired result.
+## Management by exception
+
+Await ordinary work without mandatory updates. Treat passive observation, a lightweight status request, a follow-up or turn transition, interruption, and cancellation as distinct operations. When silence becomes decision-relevant through an actual anomaly, missed task-specific window or milestone, absent expected evidence, changed decision, or accumulating risk, use the cheapest reliable probe whose information value plausibly exceeds disruption; a one-off status message or minimally disruptive follow-up can be appropriate. Observe passively when the environment supports it; observation does not pause or cancel the worker. Cancel only an explicit, authorized stop, not a status check. Do not infer that an unavailable child-to-parent decision channel makes a parent-to-child liveness probe useless. Avoid heartbeat and repeated polling loops. If a worker fails repeatedly on the same issue, reconsider the unit, evidence, or approach before retrying again.
+
+## Consequence-bounded review
+
+Use a separate fresh reviewer when the result crosses a consequential boundary: irreversible action, protected evidence, high-blast-radius synthesis, difficult semantic judgment, or integration that can introduce new errors. Prefer deterministic verification for mechanical claims.
+
+The reviewer checks the result against the task and evidence, then returns `accept`, `revise`, or `reject` with specific support. It does not produce the fix. Keep the verdict on a durable surface only when later contexts, promotion, or audit must rely on it; otherwise a bounded chat verdict is sufficient.
+
+Do not stack reviews unless each one addresses a distinct live risk. A repair needs re-review of the defect and changed surface, not a ritual replay of every settled question.

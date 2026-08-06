@@ -1,87 +1,45 @@
-# The game plan
+# Minimal durable orientation
 
-The game plan is the one artifact the top agent maintains instead of remembering. It holds the live state of the work: where you are, what's next, what's deferred, and what must be true to finish. It is coordination state, not the work product and not a full project plan.
+Use this reference only when the work may outlive a comfortable context, has acceptance-critical deferred obligations, or must survive a handoff. Do not create an orientation file for a short direct task.
 
-Keep it small. It should be the minimum a fresh context needs to answer: *what is happening right now, what happens next, and what still has to happen before this is done?* If it grows past what you'd want to re-read on every step, it's carrying detail that belongs in the result surface or a subagent brief instead.
+The orientation is a compact projection, not an event history, orchestration dashboard, or semantic completeness proof. Its job is to let the current or next context answer: what is established, what remains required, what is blocked, and what action is most likely to move the answer?
 
-Store it wherever it will survive and be re-read — a file next to the result surface, a scratch file in the working directory, or, for compact full-mode runs, a maintained section of the top agent's own working notes. What matters is that it is a single authoritative place, not scattered reminders.
-
-## Shape
+## Default shape
 
 ```md
-# Game plan: <objective in one line>
+# <objective in one line>
 
-## Objective
-<the concrete outcome, not just the activity — one short paragraph>
-Result surface: <where the real work lands: repo / doc / dataset / deliverable path>
+## Done
+- <accepted result or discharged obligation> — evidence: <pointer when needed>
 
-## Constraints
-- <macro-environment limit found in the survey: missing tool, sandbox boundary, guardrail, access gap> — implication for the work
+## Still missing
+- <required outcome not yet established>
 
-Preflight receipt: <exact runtime/interface and compatibility; authoritative inputs; mutable state; candidate and accepted result paths; permissions; promotion and rollback semantics; inherited context/state when isolation matters>
-
-For work that triggers the compact-index rule, add only the fields needed by that task: `Frontier: <current unit, status, next action, blocker, acceptance-critical pointers, and relevant provenance/environment state>` and, when asynchronous joins are material, `Attempts/joins: <unit and attempt identifiers, required completion evidence, and unresolved/unavailable fields>`. Do not add these fields to a short direct task. The index is not a semantic completeness proof; rebuild from artifacts when it is stale or incomplete.
-
-Decision frontier, only when later work depends on an unresolved result or an execution lease is triggered: <next decision; load-bearing prerequisite; cheapest safe evidence that can change it>
-
-## Now
-<the single concrete step in progress, expanded enough to act on>
-Budget / return contract if this is a live dispatch: <bound + what must come back>
-Execution lease, only when triggered: <operational proving unit; decision pilot when needed; continuation question; result-stop policy or none + reason; batch order/size; accounting source; cumulative cap; spent; operational stop signals; renewal owner; latest health/spend/decision renewal>
+## Blocked or deferred
+- <item> — reason; what would change the disposition
 
 ## Next
-- <high-level next step>
-- <high-level next step>
-(prose-level; expand one into "Now" when it becomes active)
-
-## Deferred / backlog
-- <action noticed but not yet due> — why it matters, what makes it relevant
-- <deferred action>
-
-## Decisions
-- <choice made during the run that later units must stay consistent with> — one-line rationale
-
-## Conditional coordination
-
-Use receipt and join detail only when asynchronous delegation, dependent promotion, protected-boundary risk, or an explicit need for comparative or joinable execution evidence makes it useful. Otherwise a normal dispatch note, result pointer, and proportionate review are enough. Where instrumentation is enabled, distinguish retries from duplicate events, record unpaired or unavailable states, and use verified polling if the harness cannot join events. Update the index at natural state changes rather than on every status tick.
-
-## Closeout checklist
-- [ ] <thing that must be true / done before declaring done>
-- [ ] <deferred action promoted here once it's an exit condition>
-- [ ] fresh-context final check passes
-
-## Open questions / missing inputs
-- <fact, access, or decision not yet resolved> — what would close it
-
-## Done / dropped
-- <completed step> — evidence: <pointer to real artifact>
-- <dropped step> — reason
+<one disposable recommendation>
 ```
 
-Not every section is always needed. A short run may have only Objective, Now, Next, and the closeout checklist. Add sections when the work produces content for them, not preemptively.
+Omit empty sections. Add the authoritative result surface or an acceptance criterion only when another context would otherwise be unable to reconstruct them.
 
-## When to update
+Do not add a roster, complete backlog, narrated history, status ticks, review transcript, or speculative branch tree. Keep detailed evidence, source content, and work products on their natural surfaces. When asynchronous or dependent execution requires joinable attempt or lineage state, follow `coordination-controls.md` and add only the fields the join actually consumes.
 
-Update at the natural moments, not on a timer:
+## Update moments
 
-- a step completes (move it to Done with an evidence pointer);
-- a deferred action appears (write it to Deferred immediately — this is the point of the artifact);
-- a deferred action becomes an exit condition (promote it to the closeout checklist);
-- a macro constraint is discovered (write it to Constraints — a limit that stays in your head is the failure this skill removes);
-- a decision is made that later units must honor (write it to Decisions, so briefs can point at it instead of leaking conversation);
-- the plan turns out wrong (revise Next; if the *objective* was wrong, stop and rewrite Objective explicitly);
-- before closeout (see the rebuild rule).
+Update the orientation when:
 
-If result artifacts change while the game plan does not, stop new dispatches and reconcile the plan from the artifacts before continuing.
+- an accepted result changes `Done`;
+- a required obligation opens, closes, blocks, or is deliberately deferred;
+- evidence changes what can be claimed;
+- the current next action stops being the best route;
+- a handoff or imminent compaction requires a current projection.
 
-Recording a dispatch counts as an update: when you send a unit to a subagent, write it into "Now" or "Next" with its budget and return contract *at dispatch time*, so an abandoned or floundering unit stays visible instead of vanishing.
+Do not update it for every tool call, worker status, or intermediate observation. Rewrite stale prose instead of preserving superseded wording for audit value.
 
-## The rebuild rule
+## Reconstruction
 
-The game plan is a projection of reality, not the source of truth. It will drift.
+The orientation is a projection of reality, not the source of truth. If it appears stale, if the result surface changed without an orientation change, or if another context must take over, reconstruct `Done` and `Still missing` from the objective, accepted artifacts, evidence, and any consequential verdicts. Compare once, repair the projection, and continue or close. Do not create a parallel reconstruction ledger.
 
-Before closeout — and periodically on long or high-risk runs — reconstruct the current state from the durable artifacts alone: the result surface, produced files and evidence, and review verdicts, which live on disk *outside* this plan precisely so this rebuild can use them. Do the reconstruction *without* using the existing game plan as input, then compare against the plan. A divergence in what's done, what's open, or what the evidence shows is a finding — including a unit the plan says was dispatched with nothing on disk to show for it, which is how an abandoned dispatch gets caught. Reconcile before proceeding, and treat the fact that it drifted as information about how closely you've actually been tracking.
-
-## Keep it lean
-
-If the plan is getting long, compress finished and future work to one line each and keep only the active part in detail. A game plan you dread re-reading is one you'll stop maintaining — and an unmaintained plan is worse than none, because it looks authoritative while lying.
+If maintaining the orientation takes attention comparable to the object-level work, shrink it. If an action changes neither `Done`, `Still missing`, nor their evidence, reconsider whether that action is useful.
