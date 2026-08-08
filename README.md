@@ -12,5 +12,6 @@ Included skills:
 - `exploration-map`
 - `paper-process-walkthrough`
 - `recursive-zoom-exploration`
+- `failure-investigation`
 
 Each skill lives in its own directory with a `SKILL.md` file. Clone this repository and symlink the directories of skills you want to use from `~/.codex/skills/`.
