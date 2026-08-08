@@ -50,7 +50,7 @@ Use `references/game-plan.md` only when a durable orientation is genuinely neede
 
 Probe the real environment before relying on an interface, permission, isolation claim, mutable input, or promotion path. Reuse a valid existing environment or result lineage after checking identity, freshness, and scope.
 
-Make a critical check structural when omission would affect safety or acceptance: require the producer to return the evidence, and verify it at the boundary where the result is used. Prefer deterministic checks for mechanical claims. Use a different fresh context for a consequential semantic challenge; do not add semantic review where an adequate deterministic check already settles the claim.
+Validate the claim, not the shape of the implementation. For a load-bearing change, keep in view what must remain true and use the cheapest credible observation that could expose a failure. Make that check structural only when omission would affect safety or acceptance, and reuse its evidence until a later change could affect the claim it supports. Prefer deterministic checks for mechanical claims. Use a different fresh context for a consequential semantic challenge; do not add semantic review where an adequate deterministic check already settles the claim.
 
 Protect accepted and irreplaceable result surfaces: write candidates separately, validate them, then promote. Before an unavoidable in-place transformation of irreplaceable data, create and verify a rollback copy.
 
@@ -74,7 +74,7 @@ Keep routine coordination quiet. A nonblocking informational update may state a 
 
 When observed reality makes a brief boundary conflict with its intent, or two reasonable readings would materially change scope, safety, acceptance, or verification, stop at a safe boundary before inventing a workaround. A child that needs an upstream decision may use a live decision request only on an already-known capability set that provides noninterrupting bidirectional delivery and passive waiting; otherwise, including a terminal-only or unconfirmed interface or a long delay, return `AWAITING_ORCHESTRATOR` as a terminal partial and resume deliberately. This portable fallback for child-originated decisions does not prohibit a parent from making a proportionate liveness probe. For Codex live-coordination mechanics, read `harness-defaults/codex-gpt-5.6.md`. Hold the unit, answer or revise the brief, and resume the same worker and context when the unit remains materially unchanged. This is exception handling, not a status channel.
 
-Use independent review at consequential promotion boundaries, not by default for every result. Keep the verdict durable only when later work must rely on it across contexts or when auditability matters. The reviewer remains separate from the producer and receives the task, result, relevant surface, and evidence — not a desired verdict as ambient truth.
+Calibrate review to what the result is allowed to support now: a disposable prototype needs only enough checking to make its directional signal interpretable. Use independent review when unresolved judgment would authorize consequential follow-on work or when crossing a protected promotion boundary, not by default for every result. Keep the verdict durable only when later work must rely on it across contexts or when auditability matters. The reviewer remains separate from the producer and receives the task, result, relevant surface, and evidence — not a desired verdict as ambient truth.
 
 ## Use sparse operations reflection
 

@@ -2,6 +2,10 @@
 
 This file is a high-level maintenance history for the `environment-first` skill. It is not operative guidance and must not be loaded as a task instruction source. Entries summarize implemented changes and their rationale; they are not diffs.
 
+## 2026-08-08 — Validate claims and calibrate review to decision authority
+
+Clarified that validation tests the claim a result must support rather than its implementation shape, with structural checks only where safety or acceptance depends on them. Calibrated review to current authority: disposable prototypes need an interpretable directional signal; unresolved judgment that would authorize consequential follow-on work, or protected promotion, warrants independent review while preserving producer/reviewer separation.
+
 ## 2026-08-06 — Detect semantic direction drift before plausible endpoints compound
 
 Added a compact delegation reflex for cases where materially different

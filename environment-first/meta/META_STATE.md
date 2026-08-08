@@ -4,7 +4,7 @@ This file is maintenance context for people or agents editing the `environment-f
 
 ## Status
 
-- Last updated: 2026-08-06
+- Last updated: 2026-08-08
 - Skill state: active and implemented.
 - Operative sources: `../SKILL.md`, `../references/`, and `../harness-defaults/`.
 
@@ -20,7 +20,9 @@ This file is maintenance context for people or agents editing the `environment-f
 - Treat material brief-versus-reality tension as a decision checkpoint: hold, answer, and resume the same worker when the unit remains unchanged.
 - Use a compact `Done / Still missing / Blocked or deferred / Next` projection only when persistence is needed.
 - Add controls from concrete hazards and remove them when their trigger ends.
-- Preserve transactional artifact safety, evidence provenance, protected boundaries, execution leases for scarce operations, and independent review at consequential promotion boundaries.
+- Validate the claim a result must support rather than the implementation shape; make structural checks conditional on safety or acceptance.
+- Calibrate review to the result's current authority: disposable learning needs interpretable directional checking; unresolved judgment that would authorize consequential follow-on work, or crossing a protected promotion boundary, warrants independent review.
+- Preserve transactional artifact safety, evidence provenance, protected boundaries, execution leases for scarce operations, and producer/reviewer independence when review is required.
 - Use context freshness selectively: warm same-unit repair may save reconstruction; fresh review preserves independence where it matters.
 - Keep detailed coordination state off the top agent's orientation and on the surfaces that actually consume it.
 - Use sparse trace-referenced operations reflection as an advisory aid, not a persistent monitor or liveness guarantee.
@@ -42,6 +44,7 @@ This file is maintenance context for people or agents editing the `environment-f
 - Correct the post-update passive-only liveness reflex: missing known bidirectional delivery narrows a child's live decision-request path, but does not prohibit a proportionate parent-to-child status probe after an actual coordination anomaly.
 - Add a direction-alignment reflex for plausible-but-unusable delegated results without introducing routine checkpoints, status cadence, decision diaries, a persistent role, or a mandatory artifact.
 - Keep parent self-reflection distinct from worker direction inspection: never mislabel a parent trace as worker evidence when an exact child session cannot be established.
+- Validate claims rather than implementation shape, and calibrate review to whether a result is disposable learning or decision-bearing/promotion material.
 
 ## Open questions
 
