@@ -2,6 +2,89 @@
 
 This file is a high-level maintenance history for the `environment-first` skill. It is not operative guidance and must not be loaded as a task instruction source. Entries summarize implemented changes and their rationale; they are not diffs.
 
+## 2026-08-09 — Put a smoke test before the consequential live run
+
+Added a compact working image under claim validation: before consuming a
+protected, held-out, scarce, or acceptance-bearing live run, send a harmless
+specimen through the same path that makes the claim true. A surrogate proves
+only what it exercises, and approval stops at the claim the evidence supports.
+
+Why: a structurally accepted inference harness used its consequential proving
+unit as the first live exercise of the model-facing path. The failure was not a
+reviewer claiming general runtime readiness; the structural verdict authorized
+spending the real unit before a cheap live canary had crossed the missing
+boundary. The new wording corrects that picture without adding verdict classes,
+receipt schemas, or universal reviewer fields.
+
+## 2026-08-09 — Align discovery metadata with the result-path-first frame
+
+Updated the YAML `description` used for skill discovery and routing. Preserved
+the existing task-family triggers—research, analysis, refactors, audits,
+migrations, hidden state, consequential risk, delegation, repeated execution,
+and deferred obligations—and retained the lean-executive and conditional-control
+language. Added the operative sequence directly to that first impression: reach
+the natural result or evidence path through the smallest safe reversible slice,
+and do not complete an environment first.
+
+Why: the skill body and lease reference had been corrected after a zero-evidence
+orchestration failure, but the discovery description still foregrounded
+complexity and a catalogue of controls without stating the corrected working
+picture. Because routing metadata is read before the body and acts as a compact
+behavioral prompt, leaving it unchanged could continue to prime
+environment-completion behavior. A proposed wholesale replacement was rejected
+because it would have weakened useful routing specificity; the applied hybrid
+changes the behavioral cue without narrowing the skill to experiments or
+weakening safety, protected-data, irreversible-evidence, permission, or
+promotion boundaries.
+
+## 2026-08-08 — Re-center the skill on the natural result path
+
+Reframed `environment-first` so its first working image is early, safe contact
+with the natural result or evidence path rather than completion of an
+environment before attempting the objective. Added a harm-and-recoverability
+distinction: user control, people, secrets, permissions, protected or
+irreplaceable data, irreversible external state, and irrecoverable evidence
+contamination can justify pre-slice controls; reversible confidence limitations
+normally narrow the claim, become invalidation conditions, or motivate one
+cheap canary. Controls needed only for future scale, polish, or reproducibility
+wait, while acceptance-critical reproducibility and pre-outcome protections
+remain intact.
+
+Made objective output, decision-changing evidence, or a defensible blocker the
+progress surface. Before another repair or review cycle with no objective
+evidence, the top agent must choose whether to run the smallest safe slice,
+switch to a proven mechanism, narrow the claim, return the blocker, or repair a
+defect that prevents or invalidates even that slice. Calibrated reviewers to
+the claim and consequence currently in scope; their findings require an
+explicit top-agent disposition and do not acquire blocker status merely from
+review. Explicit approval, independent-review, and protected-promotion gates
+remain authoritative.
+
+Clarified execution leases so a first safe proving unit normally uses an inline
+cap, stop condition, and terminal receipt rather than a durable reservation or
+renewal subsystem. Durable machinery still precedes repetition, fan-out,
+material scarce spend, non-retryable execution, or consequential partial state.
+
+Why: in a bounded agent-memory concept experiment, the orchestration spent
+roughly an hour producing and repeatedly reviewing fixture, freeze, ledger,
+evaluator, and containment machinery while making zero authenticated subject
+calls and producing zero experimental observations. A genuine contamination
+risk was silently promoted into a security-grade gate, reviewer findings became
+de facto vetoes over a disposable directional pilot, and an explicit warning
+against bureaucracy narrowed the planned scope without changing the next
+action. Session reconstruction confirmed that local setup checks and three
+freeze revisions displaced the first end-to-end observation.
+
+The change targets the originating mental model rather than adding a fixed
+timebox or experiment-specific checklist. Independent challenge first rejected
+an earlier draft for leaning too far toward premature execution, then accepted
+the revised wording against irreversible migrations, security work with
+secrets, ordinary bounded implementation, open-ended research, metered batches,
+and the motivating experiment. Rejected nearby overcorrections: universal
+canaries, fixed repair counts, weakened safety or approval boundaries, treating
+all validity defects as recoverable, deferring acceptance-critical
+reproducibility, and forbidding durable controls before every first invocation.
+
 ## 2026-08-08 — Validate claims and calibrate review to decision authority
 
 Clarified that validation tests the claim a result must support rather than its implementation shape, with structural checks only where safety or acceptance depends on them. Calibrated review to current authority: disposable prototypes need an interpretable directional signal; unresolved judgment that would authorize consequential follow-on work, or protected promotion, warrants independent review while preserving producer/reviewer separation.

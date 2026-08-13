@@ -155,5 +155,5 @@ Weak hooks:
 
 - Use `paper-process-walkthrough` when the failure is mainly a process trace across source artifacts.
 - Use `exploration-map` when several competing root-cause branches remain live after the first pass.
-- Delegate repair or verification only when independent work or review would materially improve confidence; otherwise investigate and validate directly.
+- Use `environment-first` to keep consequential investigations on the smallest real evidence path. Bring in `multi-agent-loop` only when the repair itself has become a multi-unit, acceptance-bearing program; delegation alone is not the trigger.
 - Turn the repair plan into a concise handoff when another person or agent must execute it; include the scope, expected outcome, and required validator.

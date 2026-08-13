@@ -14,6 +14,12 @@ then inspect health, spend, and whether another batch can still change the
 current decision. Put the lease around the scarce operation itself, even when
 a cheap subagent or script launches it.
 
+For one safe proving unit, an inline cap, stop condition, and terminal receipt
+are normally enough. Do not build durable reservation or renewal machinery
+merely to launch an unproven path. Add it before repetition, or before the first
+invocation when that invocation can fan out, materially consume a scarce cap,
+cannot be safely retried, or may leave consequential partial state.
+
 ## Lease contract
 
 Before the first unit, record only what will affect continuation:

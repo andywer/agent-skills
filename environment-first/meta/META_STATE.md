@@ -4,12 +4,14 @@ This file is maintenance context for people or agents editing the `environment-f
 
 ## Status
 
-- Last updated: 2026-08-08
+- Last updated: 2026-08-09
 - Skill state: active and implemented.
 - Operative sources: `../SKILL.md`, `../references/`, and `../harness-defaults/`.
 
 ## Active principles
 
+- Reach the natural result or evidence path early enough to learn what environment the work actually needs; environment completion is not a prerequisite to beginning the objective.
+- Classify hazards by what they can harm and whether the observation is recoverable: hard safety and protected boundaries may block; irreversible evidence contamination may require pre-outcome controls; reversible confidence limitations usually narrow the claim or become canary invalidation conditions.
 - Keep the top agent a lean executive and integrator: preserve intent, select the next value-changing action, accept results, and close.
 - Work directly when that is the simplest reliable path; delegate only when separate context adds value.
 - Manage workers and controls by exception rather than continuous monitoring.
@@ -21,8 +23,11 @@ This file is maintenance context for people or agents editing the `environment-f
 - Use a compact `Done / Still missing / Blocked or deferred / Next` projection only when persistence is needed.
 - Add controls from concrete hazards and remove them when their trigger ends.
 - Validate the claim a result must support rather than the implementation shape; make structural checks conditional on safety or acceptance.
-- Calibrate review to the result's current authority: disposable learning needs interpretable directional checking; unresolved judgment that would authorize consequential follow-on work, or crossing a protected promotion boundary, warrants independent review.
+- Treat a harmless specimen as the smoke test before a consequential live run; a surrogate proves only what it exercises, and approval stops at the claim that evidence supports.
+- Calibrate review to the claim and consequence currently in scope. Review findings do not automatically become blockers; the top agent maps them to hard boundaries, repair, invalidation or claim limitation, or defer, while preserving explicitly assigned approval and protected-review gates.
 - Preserve transactional artifact safety, evidence provenance, protected boundaries, execution leases for scarce operations, and producer/reviewer independence when review is required.
+- Count progress in objective output, decision-changing evidence, or a defensible blocker. Scaffolding counts only when the result path consumes it or it changes a decision.
+- Use inline caps, stop conditions, and terminal receipts for a first safe proving unit by default; build durable lease machinery before repetition or when the first invocation can fan out, materially consume a scarce cap, resist safe retry, or leave consequential partial state.
 - Use context freshness selectively: warm same-unit repair may save reconstruction; fresh review preserves independence where it matters.
 - Keep detailed coordination state off the top agent's orientation and on the surfaces that actually consume it.
 - Use sparse trace-referenced operations reflection as an advisory aid, not a persistent monitor or liveness guarantee.
@@ -31,6 +36,12 @@ This file is maintenance context for people or agents editing the `environment-f
 
 ## Decisions taken
 
+- Align the skill-discovery description with the operative result-path-first frame while preserving concrete task triggers, lean-executive routing, and conditional control vocabulary.
+- Reframe `environment-first` as early contact with the natural result path, not completion of an environment before attempting the objective.
+- Separate hard boundaries and irreversible evidence contamination from reversible validity limitations, so the latter do not silently become safety-grade gates.
+- Prevent review authority from expanding the claim or consequence under evaluation; findings require an explicit top-agent disposition rather than inheriting blocker status.
+- Treat another zero-evidence repair or review cycle as a decision point: run the smallest safe slice, switch mechanisms, narrow the claim, return the blocker, or repair only when the defect prevents or invalidates even that slice.
+- Clarify that recording a first-unit cap and stop condition does not imply building a durable lease subsystem around an unproven path.
 - Replace the monitoring-and-maintenance top-agent frame with a lean executive frame.
 - Replace the mandatory game plan with a minimal durable orientation at the legacy reference path.
 - Remove universal empty-context workers, disk verdicts, immutable repair packets, and final gates; retain each only under a concrete independence, persistence, promotion, or audit trigger.
@@ -45,9 +56,11 @@ This file is maintenance context for people or agents editing the `environment-f
 - Add a direction-alignment reflex for plausible-but-unusable delegated results without introducing routine checkpoints, status cadence, decision diaries, a persistent role, or a mandatory artifact.
 - Keep parent self-reflection distinct from worker direction inspection: never mislabel a parent trace as worker evidence when an exact child session cannot be established.
 - Validate claims rather than implementation shape, and calibrate review to whether a result is disposable learning or decision-bearing/promotion material.
+- Put a harmless smoke test through the real live path before consuming a protected, held-out, scarce, or acceptance-bearing run; if the boundary remains untested, make that risk explicit before proceeding.
 
 ## Open questions
 
+- In which task families is evidence contamination genuinely irreversible enough to justify pre-observation controls, and where can claim limitation or invalidation preserve a useful cheap slice?
 - How often does trace-referenced reflection change a top agent's next action enough to justify its cost?
 - Which task families benefit from warm same-unit repair without weakening reviewer independence?
 - What is the smallest durable orientation that survives compaction without becoming a second project state?
