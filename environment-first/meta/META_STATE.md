@@ -12,6 +12,7 @@ This file is maintenance context for people or agents editing the `environment-f
 
 - Reach the natural result or evidence path early enough to learn what environment the work actually needs; environment completion is not a prerequisite to beginning the objective.
 - Classify hazards by what they can harm and whether the observation is recoverable: hard safety and protected boundaries may block; irreversible evidence contamination may require pre-outcome controls; reversible confidence limitations usually narrow the claim or become canary invalidation conditions.
+- Treat an atomic consequential one-shot as bounded authorization, not a renewable lease: name its cap, relevant boundaries, available abort or rollback path, and the supported terminal claim before authorizing it.
 - Keep the top agent a lean executive and integrator: preserve intent, select the next value-changing action, accept results, and close.
 - Work directly when that is the simplest reliable path; delegate only when separate context adds value.
 - Manage workers and controls by exception rather than continuous monitoring.
@@ -36,6 +37,7 @@ This file is maintenance context for people or agents editing the `environment-f
 
 ## Decisions taken
 
+- Separate one-shot bounded authorization from renewable execution leases, so an atomic material operation neither escapes preflight controls nor pretends that partial state can inform continuation.
 - Align the skill-discovery description with the operative result-path-first frame while preserving concrete task triggers, lean-executive routing, and conditional control vocabulary.
 - Reframe `environment-first` as early contact with the natural result path, not completion of an environment before attempting the objective.
 - Separate hard boundaries and irreversible evidence contamination from reversible validity limitations, so the latter do not silently become safety-grade gates.

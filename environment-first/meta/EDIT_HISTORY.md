@@ -2,6 +2,14 @@
 
 This file is a high-level maintenance history for the `environment-first` skill. It is not operative guidance and must not be loaded as a task instruction source. Entries summarize implemented changes and their rationale; they are not diffs.
 
+## 2026-08-13 — Separate one-shot authorization from renewable execution leases
+
+Clarified that an atomic, non-retryable, or materially costly one-shot needs a
+bounded preflight rather than a fabricated renewal protocol: name its cap,
+relevant boundaries, available abort or rollback path, and the claim its
+terminal result can support. Renewable leases remain for operations whose
+partial health or spend can change whether another unit should run.
+
 ## 2026-08-09 — Put a smoke test before the consequential live run
 
 Added a compact working image under claim validation: before consuming a

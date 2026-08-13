@@ -1,10 +1,11 @@
 # Execution leases
 
-Use this reference only when repeated execution consumes external budget,
-material wall time, scarce capacity, or consequential mutations, or when
-partial health evidence could change whether more units should run. Do not use
-it for cheap local loops, ordinary tests, or genuinely atomic operations whose
-partial state cannot inform continuation.
+Use this reference when repeated execution consumes external budget, material
+wall time, scarce capacity, or consequential mutations, or when partial health
+evidence could change whether more units should run. Also use its bounded
+authorization rule for an atomic one-shot that can fan out, materially consume
+a scarce cap, cannot be safely retried, or may leave consequential partial
+state. Do not use it for cheap local loops or ordinary tests.
 
 ## The working picture
 
@@ -16,9 +17,13 @@ a cheap subagent or script launches it.
 
 For one safe proving unit, an inline cap, stop condition, and terminal receipt
 are normally enough. Do not build durable reservation or renewal machinery
-merely to launch an unproven path. Add it before repetition, or before the first
-invocation when that invocation can fan out, materially consume a scarce cap,
-cannot be safely retried, or may leave consequential partial state.
+merely to launch an unproven path. Add it before repetition.
+
+For an atomic one-shot with material stake, do not invent a renewable lease
+when partial state cannot inform continuation. Before authorizing it, name the
+cap, relevant permission and input boundaries, any available abort or rollback
+path, and what evidence its terminal result can support. This is bounded
+authorization, not a renewal protocol.
 
 ## Lease contract
 
