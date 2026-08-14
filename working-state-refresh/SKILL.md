@@ -1,11 +1,14 @@
 ---
 name: working-state-refresh
-description: Use when a project, subject, or workstream needs its latest working state reconstructed from current docs, logs, and artifacts so another agent can continue without carrying stale assumptions.
+description: Use when the user requests a current-state handoff or when no canonical current-state source can cheaply and safely support the next decision. Default to an inline, transient delta; create or update a durable state artifact only when an ownership or context-loss boundary makes persistence necessary.
 ---
 
 # Working State Refresh
 
-Use this skill when the current thread has drifted away from the latest operational state, when a project has many moving parts, or when a fresh agent needs a compact but honest handoff before continuing.
+Use this skill when the current thread cannot safely recover the latest
+operational state from canonical sources within a bounded read, or when the user
+explicitly requests a handoff, briefing, or current-state summary. Project
+complexity or a fresh agent alone is not a trigger.
 
 ## Stance
 
@@ -15,24 +18,30 @@ Treat current docs and recent findings as working state, not ground truth. The j
 
 Keep the refresh readable for the next agent. If the state cannot be understood quickly, the refresh has not done its job.
 
+Identify the canonical current-state source first. If it is usable, do not
+reconstruct or mirror it: report only material deltas, conflicts, or stale
+claims and point back to the canonical source.
+
 ## When To Use
 
 Use this skill when:
 
-- a project has accumulated many notes, logs, and pivots;
-- the latest working state is spread across several artifacts;
 - the user asks for a handoff, briefing, or current-state summary;
-- recent corrections may have shifted the frame;
-- a self-documenting subject needs its latest state refreshed;
-- the next move depends on distinguishing current belief from old context.
+- no canonical source answers the next decision without reconciling several
+  current artifacts;
+- recent corrections materially conflict with the recorded current frame; or
+- state must cross an ownership or context-loss boundary.
 
-Do not use this skill for a generic summary of all available material. The refresh should be selective, current, and decision-relevant.
+Do not use this skill for a generic summary, merely because a project has many
+moving parts, or when a usable canonical source already answers the next
+decision. The refresh should be selective, current, and decision-relevant.
 
 ## Core Workflow
 
 1. Name the scope of the refresh.
-2. Read the most recent source artifacts first: project docs, indexes, logs, decisions, and recent corrections.
-3. Reconstruct the latest working state in plain language.
+2. Identify the canonical current-state source and the shortest evidence path
+   needed to test its freshness.
+3. Reconstruct only the unresolved surface and material deltas in plain language.
 4. Separate observed facts, working hypotheses, open tensions, and stale assumptions.
 5. Identify what changed most recently and why it matters.
 6. Name the highest-leverage unresolved questions.
@@ -48,11 +57,17 @@ A good refresh usually preserves:
 - open tensions and disagreements;
 - important constraints and boundaries;
 - source references to the evidence that supports the refresh;
-- the smallest useful next step.
+- the next decision-changing move or largest safe, interpretable step.
 
 ## Output Shape
 
-Prefer a compact handoff with sections like:
+Return the refresh inline and transient by default. Do not create or update a
+durable state or handoff artifact unless the user requests it or an ownership
+or context-loss boundary makes persistence necessary. A durable refresh must
+identify its canonical source, freshness boundary, and non-authoritative role
+so it cannot become a competing state surface.
+
+When useful, choose only the sections needed from:
 
 - `Purpose`
 - `Latest Working State`
@@ -62,7 +77,8 @@ Prefer a compact handoff with sections like:
 - `Next Move`
 - `Source Notes`
 
-The refresh should be self-documenting: a future agent should be able to read it and continue work without reconstructing the whole trail.
+Omit empty sections. A durable refresh should let a future agent continue
+without reconstructing the whole trail.
 
 ## Quality Bar
 
@@ -71,3 +87,4 @@ The refresh should be self-documenting: a future agent should be able to read it
 - It should not freeze recent opinions into permanent truth.
 - It should preserve enough provenance that the next agent can audit the frame if needed.
 - It should make the next move obvious without overcommitting to a single branch.
+- It should not duplicate a usable canonical state or create a competing authority.
