@@ -168,7 +168,9 @@ Look for:
 - evidence that supports a weaker claim than the authors make;
 - counterfactuals not tied to the causal path.
 
-Phrase critique as model repair, not just cautionary prose. For example:
+Do not treat every missing mechanism as a design defect. Ask what the source actually claims to specify: an open implementation choice can stay open, an unsupported claim needs evidence, and an excluded integration layer can remain omitted. Repair only an in-scope gap that breaks the critical path, and prefer the smallest change at the same abstraction layer. A valid critique may conclude that no architectural repair is needed.
+
+When repair is warranted, change the model rather than adding cautionary prose. For example:
 
 - downgrade a claim from `derived` to `hypothesized`;
 - add a missing variable to the state model;
