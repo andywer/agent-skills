@@ -9,7 +9,7 @@ Use a recursive map to make the search process visible: seed adjacent branches, 
 
 ## Start and working state
 
-Activate this skill only when the question deserves recursive exploration. At activation, create a task-local `MAP.md` before substantive exploration and persist it through the end of the task. Compact and full modes change density, not whether `MAP.md` exists. If the task is too small for a map, do not activate this skill.
+Activate this skill only when the question deserves recursive exploration. At activation, create a task-local `MAP.md` before substantive exploration and persist it through the end of the task. Both modes use `MAP.md`, but compact mode may begin with only the root question, Current Best Answer, Tree, and Gaps; add ledgers, scores, risk fields, and iteration history only when concrete evidence, contradiction, comparison, decision risk, or another iteration makes them useful. Full mode uses the complete working state below. If the task is too small for a map, do not activate this skill.
 
 Use compact mode for a genuinely map-worthy question with few branches and one or two expected iterations; keep every section terse. Use full mode when branches survive scrutiny, evidence may conflict, the decision is hard to reverse, or the question needs repeated frontier work.
 
@@ -24,7 +24,7 @@ Do not add dispatch directories, JSON protocols, fixed critique cadences, separa
 
 ## Build the map
 
-Create `MAP.md` with these sections, in this order. Keep every section; write `none yet` rather than omitting one.
+In full mode, create `MAP.md` with these sections, in this order. In compact mode, use the minimal subset above and add sections as the work produces something worth tracking; do not create empty bookkeeping solely for schema completeness.
 
 1. **Root question** — quote the user's question verbatim, then record constraints and the analysis as-of date. Never paraphrase the root question.
 2. **Current Best Answer** — one provisional paragraph with confidence and the specific finding that would change it.
@@ -35,7 +35,7 @@ Create `MAP.md` with these sections, in this order. Keep every section; write `n
 7. **Iteration log** — one line per iteration describing the selected frontier and the change.
 8. **Appendix: archived branches** — pruned nodes and their kill reasons; never reuse IDs.
 
-Seed the first adjacent nodes, such as options, affected parties, success criteria, root problems, capabilities and limits, candidate solutions, and validation paths. Give important nodes children or an explicit terminal reason. Use the node format below and keep the tree relational rather than a flat list:
+Seed the first adjacent nodes, such as options, affected parties, success criteria, root problems, capabilities and limits, candidate solutions, and validation paths. For design critique, first demonstrate an in-scope failure on a concrete path; attach candidate repairs beneath that failure rather than seeding them as peer solutions. Until then, a suspected repair is a hypothesis, not a scored solution branch. Give important nodes children or an explicit terminal reason. Use the node format below and keep the tree relational rather than a flat list:
 
 ```markdown
 - [N2.3] Title (P:4 A:2 | frontier)
@@ -43,7 +43,7 @@ Seed the first adjacent nodes, such as options, affected parties, success criter
   risk: downside=med, reversible=yes, deadline=none
 ```
 
-Use stable IDs such as `N1`, `N1.2`, and `N1.2.1`. Score Promise (P) and Actionability (A) from 0–5, with a one-line rationale comparing a named sibling. Add risk fields for decisions. Keep evidence level separate from promise and actionability; a promising branch may still be unvalidated or blocked. See [scoring.md](references/scoring.md).
+Use stable IDs such as `N1`, `N1.2`, and `N1.2.1`. In full mode, or once compact branches require comparison, score Promise (P) and Actionability (A) from 0–5, with a one-line rationale comparing a named sibling. Add risk fields when a decision has meaningful downside. Keep evidence level separate from promise and actionability; a promising branch may still be unvalidated or blocked. See [scoring.md](references/scoring.md).
 
 ## Explore and update
 
@@ -67,7 +67,7 @@ Stop the whole loop only when the Current Best Answer is stable, no open contrad
 
 For ordinary solo work, perform one lightweight final self-challenge: steelman the strongest rival, invert the most fragile load-bearing assumption, and identify the weakest or stalest load-bearing evidence. Record any finding in `MAP.md` before finalizing.
 
-Use a fresh reviewer only when multiple agents contributed to a load-bearing conclusion, the decision is high-downside or irreversible, material evidence remains disputed or stale, or the user requests independent verification. The reviewer returns one verdict: `ACCEPT`, `REPAIR`, `REOPEN`, or `BLOCKED`. A localized defect permits one bounded repair followed by re-review; a structural gap reopens exploration.
+Before optimizing a proposed remedy, challenge its premise and proportion: is the defect in scope, and would no change, a clarification, or an ordinary implementation choice suffice? Use a fresh reviewer only when multiple agents contributed to a load-bearing conclusion, the decision is high-downside or irreversible, material evidence remains disputed or stale, or the user requests independent verification. The reviewer returns one verdict: `ACCEPT`, `REPAIR`, `REOPEN`, or `BLOCKED`. A localized defect permits one bounded repair followed by re-review; a structural gap reopens exploration.
 
 ## Limits
 
