@@ -9,9 +9,9 @@ Use a recursive map to make the search process visible: seed adjacent branches, 
 
 ## Start and working state
 
-Activate this skill only when the question deserves recursive exploration. At activation, create a task-local `MAP.md` before substantive exploration and persist it through the end of the task. Both modes use `MAP.md`, but compact mode may begin with only the root question, Current Best Answer, Tree, and Gaps; add ledgers, scores, risk fields, and iteration history only when concrete evidence, contradiction, comparison, decision risk, or another iteration makes them useful. Full mode uses the complete working state below. If the task is too small for a map, do not activate this skill.
+Activate this skill only when the question deserves recursive exploration. At activation, create a task-local `MAP.md` before substantive exploration and persist it through the end of the task. Both modes use `MAP.md`: compact mode may omit empty bookkeeping; full mode uses the complete working state below. If the task is too small for a map, do not activate this skill.
 
-Use compact mode for a genuinely map-worthy question with few branches and one or two expected iterations; keep every section terse. Use full mode when branches survive scrutiny, evidence may conflict, the decision is hard to reverse, or the question needs repeated frontier work.
+Use compact mode for a genuinely map-worthy question with few branches and one or two expected iterations; keep the map terse. Use full mode when branches survive scrutiny, evidence may conflict, the decision is hard to reverse, or the question needs repeated frontier work.
 
 Start solo. Do not estimate complexity in advance to choose orchestration. Escalate only when observed runtime pressure shows either:
 
@@ -24,7 +24,7 @@ Do not add dispatch directories, JSON protocols, fixed critique cadences, separa
 
 ## Build the map
 
-In full mode, create `MAP.md` with these sections, in this order. In compact mode, use the minimal subset above and add sections as the work produces something worth tracking; do not create empty bookkeeping solely for schema completeness.
+In full mode, create `MAP.md` with these sections, in this order. In compact mode, start with Root question, Current Best Answer, Tree, and Gaps; add another section only when the work produces something worth tracking there.
 
 1. **Root question** — quote the user's question verbatim, then record constraints and the analysis as-of date. Never paraphrase the root question.
 2. **Current Best Answer** — one provisional paragraph with confidence and the specific finding that would change it.
@@ -35,7 +35,7 @@ In full mode, create `MAP.md` with these sections, in this order. In compact mod
 7. **Iteration log** — one line per iteration describing the selected frontier and the change.
 8. **Appendix: archived branches** — pruned nodes and their kill reasons; never reuse IDs.
 
-Seed the first adjacent nodes, such as options, affected parties, success criteria, root problems, capabilities and limits, candidate solutions, and validation paths. For design critique, first demonstrate an in-scope failure on a concrete path; attach candidate repairs beneath that failure rather than seeding them as peer solutions. Until then, a suspected repair is a hypothesis, not a scored solution branch. Give important nodes children or an explicit terminal reason. Use the node format below and keep the tree relational rather than a flat list:
+Seed the first adjacent nodes, such as options, affected parties, success criteria, root problems, capabilities and limits, candidate solutions, and validation paths. For design critique, do not optimize a repair before demonstrating its failure on a concrete in-scope path; until then, keep it as a hypothesis. Give important nodes children or an explicit terminal reason. Use the node format below and keep the tree relational rather than a flat list:
 
 ```markdown
 - [N2.3] Title (P:4 A:2 | frontier)
@@ -67,7 +67,7 @@ Stop the whole loop only when the Current Best Answer is stable, no open contrad
 
 For ordinary solo work, perform one lightweight final self-challenge: steelman the strongest rival, invert the most fragile load-bearing assumption, and identify the weakest or stalest load-bearing evidence. Record any finding in `MAP.md` before finalizing.
 
-Before optimizing a proposed remedy, challenge its premise and proportion: is the defect in scope, and would no change, a clarification, or an ordinary implementation choice suffice? Use a fresh reviewer only when multiple agents contributed to a load-bearing conclusion, the decision is high-downside or irreversible, material evidence remains disputed or stale, or the user requests independent verification. The reviewer returns one verdict: `ACCEPT`, `REPAIR`, `REOPEN`, or `BLOCKED`. A localized defect permits one bounded repair followed by re-review; a structural gap reopens exploration.
+Before optimizing a proposed remedy, ask whether the claimed defect is in scope and whether no change, a clarification, or an ordinary implementation choice would suffice. Use a fresh reviewer only when multiple agents contributed to a load-bearing conclusion, the decision is high-downside or irreversible, material evidence remains disputed or stale, or the user requests independent verification. The reviewer returns one verdict: `ACCEPT`, `REPAIR`, `REOPEN`, or `BLOCKED`. A localized defect permits one bounded repair followed by re-review; a structural gap reopens exploration.
 
 ## Limits
 
