@@ -168,6 +168,15 @@ Look for:
 - evidence that supports a weaker claim than the authors make;
 - counterfactuals not tied to the causal path.
 
+Before repairing a missing mechanism, classify what is missing:
+
+- `contract gap`: the source claims a guarantee or process that cannot work as written;
+- `implementation choice`: the source intentionally leaves the mechanism open;
+- `evidence gap`: the claim may hold, but the available sources do not establish it;
+- `out-of-scope integration`: the mechanism belongs to a layer excluded by the walkthrough contract.
+
+Only an in-scope contract gap on the critical path requires model repair. An implementation choice can stay open, an evidence gap calls for inspection, and an excluded layer can remain omitted unless the source claims to cover it. A valid critique may conclude that no architectural repair is needed. When repair is warranted, prefer the smallest change at the same abstraction layer as the demonstrated failure.
+
 Phrase critique as model repair, not just cautionary prose. For example:
 
 - downgrade a claim from `derived` to `hypothesized`;
