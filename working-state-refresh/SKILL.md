@@ -1,6 +1,6 @@
 ---
 name: working-state-refresh
-description: Use when the user requests a current-state handoff or when no canonical current-state source can cheaply and safely support the next decision. Default to an inline, transient delta; create or update a durable state artifact only when an ownership or context-loss boundary makes persistence necessary.
+description: Use for handoffs, context-loss recovery, or current-state briefings that require reconciling multiple or conflicting sources. Do not use when one current source answers the request directly. Default to an inline delta; persist it only across an ownership or context-loss boundary.
 ---
 
 # Working State Refresh
