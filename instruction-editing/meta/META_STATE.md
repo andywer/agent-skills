@@ -4,29 +4,31 @@ This file is maintenance context for people or agents editing the `instruction-e
 
 ## Status
 
-- Last updated: 2026-08-08
+- Last updated: 2026-08-10
 - Skill state: active and implemented.
 - Operative source: `../SKILL.md` only.
 
 ## Active principles
 
-- Treat instruction editing as language design: wording should make the desired behavior natural, the likely mistake visible, and boundaries clear.
+- Treat instruction editing as behavioral design through language.
+- Match the level of prescription to the document's job instead of treating compactness or procedural detail as virtues by themselves.
 - Correct the underlying assumption or working picture before adding more rules.
-- Preserve real hard boundaries, while leaving judgment and freedom where exact procedures are not fragile.
-- Use clear behavior language and ordinary examples when abstract policy wording would hide what an agent should do.
-- Keep the edit compact; rules belong only where they express real invariants.
+- Keep guidance actionable at its intended level: principles direct judgment, procedures stabilize fragile sequences, and requirements state invariants.
+- Preserve real hard boundaries while leaving judgment and freedom where mechanics are not load-bearing.
+- Resist both checklist patching and aphorism collapse.
 
 ## Decisions taken
 
 - Keep a single operative skill file and make maintenance context explicitly non-operative.
 - Replace opaque language about instincts and frames with plain descriptions of behavior and likely mistakes.
-- Add a read-aloud compression check to resist dense policy wording without adding word limits or templates.
+- Retain the read-aloud compression check, but make clear that compression must not remove the workflow or boundary that makes guidance actionable.
+- Treat genre and intended decisions as evidence to discover from the document's use, not as a mandatory template inferred from its title.
 
 ## Open questions
 
 - Which examples most reliably reveal that wording invites procedural compliance instead of good judgment?
+- Which examples reveal the opposite failure, where memorable principles no longer direct action?
 - When does a hard boundary need an explicit step rather than a clear behavioral constraint?
-- Does the read-aloud check remain enough as the skill is used across more instruction types?
 
 ## Maintenance boundary
 
