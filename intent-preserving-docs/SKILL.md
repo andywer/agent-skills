@@ -2,8 +2,10 @@
 name: intent-preserving-docs
 description: >-
   Write or revise handovers, concepts, implementation briefs, specifications,
-  READMEs, and other documentation. Clarify intent, requirements, assumptions,
-  choices, and change authority without silently altering commitments.
+  and READMEs when intent, commitments, assumptions, or change authority need
+  clarification. Preserve meaning while making the reader's next decisions
+  actionable. Not for formatting-only edits, agent instruction design, or
+  reconstructing current working state from multiple or conflicting sources.
 ---
 
 # Intent-Preserving Documentation
@@ -16,11 +18,11 @@ Give the reader a working picture they can act from: what matters, why, what is 
 
 Read the current text and relevant sources. Separate the reader’s task from your editing mandate: you may be clarifying a successor’s permission to redesign without having that permission yourself.
 
-Distinguish requirements, implemented behavior, and proposals. Newer prose does not automatically supersede an accepted decision. Keep material conflicts and uncertainty visible rather than resolving them for a cleaner narrative.
+Use this skill for the meaning and decision guidance in the document. Format-specific skills handle artifact mechanics; `instruction-editing` handles agent behavior; `working-state-refresh` handles reconciling current state across sources. Combine them only when the task needs both jobs.
+
+Distinguish governing instructions and decisions from observations, proposals, and historical summaries. Supersession depends on authority and scope: an explicit user revision can replace an earlier decision; a newer summary cannot do so merely by being newer. Preserve material conflicts or unknowns that the available authority and evidence do not resolve.
 
 ## Make commitments and freedom clear
-
-Explain intent, commitments, implications under stated assumptions, and current realization.
 
 Where the distinction affects action, make clear:
 
@@ -42,18 +44,18 @@ Prefer lower total implementation, operating, verification, and maintenance burd
 
 ## Organize for the reader
 
-For concepts and handovers, open with the title and a short essence: problem, intended outcome, and distinguishing idea. Walk downstream into implications and mechanisms. Begin substantial sections with their main point; keep rationale, change latitude, and checks nearby. Cross-reference shared constraints rather than forcing a strict tree.
+For a new concept or handover, or an authorized substantial restructuring, a short statement of the problem, intended outcome, and distinguishing idea can orient the reader before implications and mechanisms. Use equivalent content and labels that fit the document. Keep rationale, change latitude, and checks near the claims they qualify; cross-reference shared constraints where helpful.
 
-Preserve useful existing structure. Runbooks need guards before actions; references need easy lookup. Do not impose one outline or metadata scheme everywhere.
+Preserve useful existing structure and the scope of a small edit. Runbooks need guards before actions; references need easy lookup. The reader's task determines the organization, not a fixed opening, outline, or metadata scheme.
 
-Keep history only where it changes what the reader should do. Record consequential decisions with their reason, material alternative, and reopening condition; a separate ledger is optional. Use an acceptance scenario or tempting wrong shortcut where abstract wording leaves a dangerous ambiguity. A passing example is not proof of the whole requirement.
+Bring history into the active narrative where it changes what the reader should do. Preserve consequential decisions and their known rationale, material alternatives, and reopening conditions without inventing missing ones. Use an acceptance scenario or tempting wrong shortcut where abstract wording leaves a consequential ambiguity. A passing example is not proof of the whole requirement.
 
 ## For handovers
 
-Make the next meaningful action possible. Carry forward **North Star**—destination and core constraint—and **Now**—assignment, current state, and main risk. Distinguish implemented, tested, proposed, and unfinished work. Include protected boundaries, useful artifact entry points, blockers or paused actions, and the next decision or coherent work slice.
+Make the next meaningful action possible. Carry forward the destination and core constraint alongside the current assignment, state, and main risk; these are content needs, not required headings. Distinguish implemented, tested, proposed, and unfinished work. Include protected boundaries, useful artifact entry points, blockers or paused actions, and the next decision or coherent work slice where they matter to continuation.
 
-Check that essential references are accessible to the successor. For costly or ambiguous work, use a brief receiver preflight: first action and why, what must remain intact, and what may be simplified. Do not require routine approval or a long paraphrase.
+Check essential references within available access and state any access limits. For costly or ambiguous work, read the handover as the successor: can you identify the first action and why, what must remain intact, and what may be simplified? Repair gaps from available sources. This is an editorial readiness check, not a required exchange with the receiver or an approval gate.
 
 ## Check the result
 
-Can the reader choose the right next action, reject an attractive but invalid shortcut, and use the freedom granted? Check the motivating case and an ordinary unrelated edit. Remove repetition and ceremony. Flag material unresolved issues without claiming unperformed verification.
+Read the revision against the requested task and its sources: can the reader choose the next action, avoid a plausible invalid shortcut, and use the freedom actually granted? Check for changed commitments, lost conditions, or unsupported certainty. For a small edit, keep this review local to the change; do not create unrelated edits, test artifacts, or receiver interactions just to validate the prose. Remove repetition and flag material unresolved issues without claiming unperformed verification.
