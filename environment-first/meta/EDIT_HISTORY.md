@@ -2,6 +2,14 @@
 
 This file is a high-level maintenance history for the `environment-first` skill. It is not operative guidance and must not be loaded as a task instruction source. Entries summarize implemented changes and their rationale; they are not diffs.
 
+## 2026-08-26 — Reopen affected closures and challenge omissions at closeout
+
+Integrated two useful rules from a redundant local workflow: when the user
+changes the contract, reopen only closures that depended on the changed
+criteria; before closing a consequential assembled result, look for a missing
+major item rather than validating only the known checklist. Kept both rules
+proportionate and tied to existing orientation and closeout guidance.
+
 ## 2026-08-13 — Separate one-shot authorization from renewable execution leases
 
 Clarified that an atomic, non-retryable, or materially costly one-shot needs a

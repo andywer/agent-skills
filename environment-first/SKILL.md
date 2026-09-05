@@ -44,6 +44,8 @@ When work may outlive a comfortable context, keep a short, revisable projection:
 
 Use ordinary prose. Rewrite the projection when reality changes; it need not preserve history or encode every transition. Source artifacts and evidence remain authoritative on their natural surfaces. Externalize a decision only when another context or later action must rely on it.
 
+When the user changes the objective, constraints, risk tolerance, or acceptance criteria, re-read the changed contract and reopen only the prior closures that depended on it before continuing.
+
 If an action changes neither `Done`, `Still missing`, nor the evidence supporting them, treat that as a possible sign of ceremony. Simplify, reorient, return partial work, or close rather than elaborating the control system.
 
 Use `references/game-plan.md` only when a durable orientation is genuinely needed. Add acceptance-critical pointers or join state only when compaction, dependent handoffs, or asynchronous work makes reconstruction consequential.

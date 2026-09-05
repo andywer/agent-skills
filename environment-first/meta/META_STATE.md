@@ -4,7 +4,7 @@ This file is maintenance context for people or agents editing the `environment-f
 
 ## Status
 
-- Last updated: 2026-08-09
+- Last updated: 2026-08-26
 - Skill state: active and implemented.
 - Operative sources: `../SKILL.md`, `../references/`, and `../harness-defaults/`.
 
@@ -14,6 +14,7 @@ This file is maintenance context for people or agents editing the `environment-f
 - Classify hazards by what they can harm and whether the observation is recoverable: hard safety and protected boundaries may block; irreversible evidence contamination may require pre-outcome controls; reversible confidence limitations usually narrow the claim or become canary invalidation conditions.
 - Treat an atomic consequential one-shot as bounded authorization, not a renewable lease: name its cap, relevant boundaries, available abort or rollback path, and the supported terminal claim before authorizing it.
 - Keep the top agent a lean executive and integrator: preserve intent, select the next value-changing action, accept results, and close.
+- Reopen only prior closures that depended on changed user criteria, and challenge consequential closeout for material omissions beyond the known checklist.
 - Work directly when that is the simplest reliable path; delegate only when separate context adds value.
 - Manage workers and controls by exception rather than continuous monitoring.
 - When plausible endpoints can mask materially different interpretations or methods, obtain one cheapest useful early signal of direction toward intended use, then leave routine work autonomous. Keep direction distinct from liveness and task-native evidence of effects.
@@ -37,6 +38,7 @@ This file is maintenance context for people or agents editing the `environment-f
 
 ## Decisions taken
 
+- Integrate focused contract-rebase and omission-challenge rules from a redundant local workflow without adding that workflow as a separate skill.
 - Separate one-shot bounded authorization from renewable execution leases, so an atomic material operation neither escapes preflight controls nor pretends that partial state can inform continuation.
 - Align the skill-discovery description with the operative result-path-first frame while preserving concrete task triggers, lean-executive routing, and conditional control vocabulary.
 - Reframe `environment-first` as early contact with the natural result path, not completion of an environment before attempting the objective.

@@ -19,6 +19,8 @@ Verify the result surface and the evidence supporting load-bearing claims. Recon
 
 When provenance, protected promotion, execution leases, or asynchronous joins were triggered, reconcile the fields those controls actually consume. Do not accept a receipt as evidence of semantic correctness, and do not infer completion from silence.
 
+Before closing a consequential assembled result, challenge the known checklist by asking what major item is missing. Add any material omission to the remaining work, or record why it is out of scope; do not convert an unchecked omission into closure.
+
 ## 3. Decide whether the assembled whole needs fresh review
 
 Use a fresh final reviewer when integration itself is consequential and prior checks did not settle the assembled claim: high-blast-radius synthesis, protected evidence, difficult causal or quantitative interpretation, irreversible release, or a final presentation that materially changes a load-bearing claim.
