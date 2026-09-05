@@ -14,9 +14,9 @@ Give the worker:
 - **Boundaries** — what not to touch or decide.
 - **Sources** — the exact files, artifacts, interfaces, or links needed.
 
-Add a budget only when cost, time, attempts, or blast radius can change continuation. If repeated or metered consequential execution is allowed, attach the relevant execution lease; a worker's prose budget does not constrain an external operation it launches.
+Add a budget only when cost, time, attempts, or blast radius can change continuation. If repeated or metered consequential execution is allowed, attach the relevant execution lease. For a consequential atomic one-shot that can fan out, materially consume a scarce cap, resist safe retry, or leave consequential partial state, attach the reference's bounded-authorization rule instead. A worker's prose budget does not constrain an external operation it launches.
 
-When different interpretations, methods, or workarounds could produce similarly plausible endpoints, obtain one cheap early signal that the unit still serves its intended use. Ask the worker to surface a material change in interpretation, method, workaround, or verification that could make the result unusable; ordinary choices remain the worker's. This is not a routine checkpoint, decision diary, or liveness report, and it does not establish task effects.
+When different interpretations, methods, or workarounds could produce similarly plausible endpoints, ask the worker to surface material changes that could make the result unusable; ordinary choices remain the worker's. Supervise the operations at points where drift could change acceptance rather than judging only the finished artifact.
 
 Do not require a schema, packet file, receipt, or full conversation reconstruction unless a real downstream consumer needs it.
 
@@ -48,7 +48,7 @@ On repair, address the named defects or explain precisely why one cannot be addr
 
 ## Management by exception
 
-Await ordinary work without mandatory updates. Treat passive observation, a lightweight status request, a follow-up or turn transition, interruption, and cancellation as distinct operations. When silence becomes decision-relevant through an actual anomaly, missed task-specific window or milestone, absent expected evidence, changed decision, or accumulating risk, use the cheapest reliable probe whose information value plausibly exceeds disruption; a one-off status message or minimally disruptive follow-up can be appropriate. Observe passively when the environment supports it; observation does not pause or cancel the worker. Cancel only an explicit, authorized stop, not a status check. Do not infer that an unavailable child-to-parent decision channel makes a parent-to-child liveness probe useless. Avoid heartbeat and repeated polling loops. If a worker fails repeatedly on the same issue, reconsider the unit, evidence, or approach before retrying again.
+Keep routine narration quiet. Prefer a direct trace, session span, or activity stream for supervision; lifecycle state and produced artifacts answer different questions. When no direct operational view exists, bounded polling becomes vital. Ask only for the current interpretation, actions, blockers, or verification needed for the next judgment. Because polling can distract the worker and makes its self-report another truthfulness and accuracy risk, use the minimum useful cadence, stop when the decision is informed, and corroborate material claims when possible. Treat observation, status requests, follow-up or turn transitions, interruption, and cancellation as distinct operations. Cancel only an explicit authorized stop. If a worker repeatedly drifts or fails, reconsider the unit or approach before retrying.
 
 ## Consequence-bounded review
 

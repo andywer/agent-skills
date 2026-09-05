@@ -2,6 +2,23 @@
 
 This file is a high-level maintenance history for the `environment-first` skill. It is not operative guidance and must not be loaded as a task instruction source. Entries summarize implemented changes and their rationale; they are not diffs.
 
+## 2026-09-05 — Supervise operations and expose atomic controls
+
+Corrected progressive-disclosure routing so consequential atomic one-shots
+reach the bounded-authorization guidance already present in execution leases.
+
+Replaced a passive liveness-and-artifact working picture with task-relative
+operational supervision. Direct traces, spans, or activity streams are preferred
+because lifecycle state proves only liveness and result artifacts do not show
+whether the work remained aligned while it was produced. When no direct
+operational view exists, bounded polling becomes necessary despite its costs:
+it can distract the worker and makes the truthfulness and accuracy of the
+worker's self-report another failure mode.
+
+Renamed the Codex harness defaults to remove a stale GPT-5.6-only applicability
+claim. Capability checks, rather than model identity, govern whether its
+coordination and supervision guidance applies.
+
 ## 2026-08-26 — Reopen affected closures and challenge omissions at closeout
 
 Integrated two useful rules from a redundant local workflow: when the user

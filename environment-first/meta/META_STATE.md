@@ -4,7 +4,7 @@ This file is maintenance context for people or agents editing the `environment-f
 
 ## Status
 
-- Last updated: 2026-08-26
+- Last updated: 2026-09-05
 - Skill state: active and implemented.
 - Operative sources: `../SKILL.md`, `../references/`, and `../harness-defaults/`.
 
@@ -16,10 +16,10 @@ This file is maintenance context for people or agents editing the `environment-f
 - Keep the top agent a lean executive and integrator: preserve intent, select the next value-changing action, accept results, and close.
 - Reopen only prior closures that depended on changed user criteria, and challenge consequential closeout for material omissions beyond the known checklist.
 - Work directly when that is the simplest reliable path; delegate only when separate context adds value.
-- Manage workers and controls by exception rather than continuous monitoring.
-- When plausible endpoints can mask materially different interpretations or methods, obtain one cheapest useful early signal of direction toward intended use, then leave routine work autonomous. Keep direction distinct from liveness and task-native evidence of effects.
+- Manage workers and controls by exception while directly supervising the operations that determine alignment and fitness for purpose.
+- When plausible endpoints can mask materially different interpretations or methods, inspect an early operation-level signal and observe again at task-relative points where drift could change acceptance. Keep operation alignment distinct from lifecycle state and task-native evidence of effects.
 - Keep routine coordination quiet: decision-relevant information may flow without acknowledgement or an approval gate; only material boundaries pause work.
-- Distinguish passive observation, lightweight liveness probes, follow-up or turn transitions, interruption, and cancellation; after decision-relevant silence, a capable orchestrator may choose a one-off cheapest reliable probe rather than wait categorically.
+- Prefer direct operational observation. When no direct view exists, use bounded polling as a necessary fallback despite its distraction cost and the added truthfulness and accuracy risk of worker-authored status.
 - Preserve terminal partial-return and deliberate resume as the portable fallback for a child-originated material decision request when a suitable live return channel is unavailable or delay is long; this does not make parent-to-child liveness probes useless.
 - Treat material brief-versus-reality tension as a decision checkpoint: hold, answer, and resume the same worker when the unit remains unchanged.
 - Use a compact `Done / Still missing / Blocked or deferred / Next` projection only when persistence is needed.
@@ -38,6 +38,10 @@ This file is maintenance context for people or agents editing the `environment-f
 
 ## Decisions taken
 
+- Route consequential atomic one-shots to execution-leases bounded authorization as well as repeated and metered work.
+- Supervise delegated operations for alignment and fitness; lifecycle state and result artifacts do not substitute for operation-level observation.
+- Use bounded polling when direct operational observation is unavailable, while accounting for worker distraction and self-report reliability.
+- Treat Codex coordination interfaces as harness capabilities rather than GPT-5.6-specific behavior.
 - Integrate focused contract-rebase and omission-challenge rules from a redundant local workflow without adding that workflow as a separate skill.
 - Separate one-shot bounded authorization from renewable execution leases, so an atomic material operation neither escapes preflight controls nor pretends that partial state can inform continuation.
 - Align the skill-discovery description with the operative result-path-first frame while preserving concrete task triggers, lean-executive routing, and conditional control vocabulary.

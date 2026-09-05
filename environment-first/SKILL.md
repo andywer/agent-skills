@@ -17,7 +17,7 @@ Add a control only for a concrete hazard:
 - give delegated work a bounded brief;
 - protect irreplaceable or accepted results transactionally;
 - require provenance when downstream work depends on an evidence class;
-- lease repeated work when it consumes material time, budget, capacity, or consequential mutations;
+- lease repeated work when it consumes material time, budget, capacity, or consequential mutations, and bound consequential atomic one-shots before authorizing them;
 - use independent review when semantic judgment or integration is consequential;
 - use joinable receipts only when asynchronous or comparative execution actually needs them.
 
@@ -60,7 +60,7 @@ Think smoke test before the real run. When the real run is protected, held out, 
 
 Protect accepted and irreplaceable result surfaces: write candidates separately, validate them, then promote. Before an unavoidable in-place transformation of irreplaceable data, create and verify a rollback copy.
 
-For provenance gates, asynchronous joins, protected promotion, and transactional details, read `references/coordination-controls.md` only when one of those hazards is present. For repeated or metered consequential execution, read `references/execution-leases.md` before the first unit.
+For provenance gates, asynchronous joins, protected promotion, and transactional details, read `references/coordination-controls.md` only when one of those hazards is present. Read `references/execution-leases.md` before repeated or metered consequential execution, or before a consequential atomic one-shot that can fan out, materially consume a scarce cap, resist safe retry, or leave consequential partial state.
 
 ## Delegate shallowly and deliberately
 
@@ -68,7 +68,7 @@ Prefer one active worker when one is enough. Parallelize disjoint work only when
 
 Give a worker the unit's scope, why it matters, what done means, what is out of scope, the relevant sources, and the evidence to return. Add a budget only when cost, time, attempts, or blast radius can change the decision. See `references/subagent-brief.md` when the dispatch is consequential or non-trivial.
 
-When materially different interpretations or methods could reach similarly plausible endpoints, a finished-looking delegated result can still be insufficient. Obtain one cheapest useful early signal that the work remains directed at its intended use—such as a small result-surface check, a concise interpretation or method reflection, or a decision-relevant intermediate—then leave routine work autonomous. This is neither liveness evidence nor proof of task effects; assess those separately from their natural surfaces. Do not turn it into mandatory checkpoints, decision diaries, or status cadence.
+When materially different interpretations or methods could reach similarly plausible endpoints, supervise the worker's operations at task-relative points where drift could change acceptance. Prefer a direct trace, session span, or activity stream. Lifecycle state and finished artifacts do not show whether the work remained aligned. When no direct operational view exists, use bounded polling about the worker's current interpretation, actions, blockers, or verification. Polling can distract the worker and makes the truthfulness and accuracy of its response another failure mode, so keep it minimal and stop once the decision is informed. This supervision supports alignment, not proof of task effects; establish those separately from their natural result surfaces. See `references/subagent-brief.md` for portable mechanics.
 
 Use context freshness selectively:
 
@@ -76,9 +76,7 @@ Use context freshness selectively:
 - use a fresh context when independence is the point — consequential review, frame challenge, or materially different work;
 - never let a producer self-promote across a protected or consequential boundary.
 
-Keep routine coordination quiet. A nonblocking informational update may state a fact, milestone, or reply; it neither needs acknowledgement nor pauses work or creates an approval gate. A question that needs a decision is a decision request, not an informational update. Do not conflate passive observation, a lightweight status request, a follow-up or turn transition, interruption, and cancellation: they have different delivery and disruption semantics. When silence becomes decision-relevant through an actual anomaly, missed task-specific window or milestone, absent expected evidence, changed decision, or accumulating risk, choose the cheapest reliable probe whose information value plausibly exceeds its disruption. A one-off lightweight status message or minimally disruptive follow-up can be appropriate; do not create heartbeat or polling loops. Observe work without changing it when the environment supports that; observation is not cancellation. Stop work only for an explicit, authorized cancellation, never merely to obtain status. Do not infer that an unavailable child-to-parent decision channel makes a parent-to-child liveness probe useless. After repeated failure on the same issue, reconsider the unit or approach instead of adding repair machinery.
-
-When observed reality makes a brief boundary conflict with its intent, or two reasonable readings would materially change scope, safety, acceptance, or verification, stop at a safe boundary before inventing a workaround. A child that needs an upstream decision may use a live decision request only on an already-known capability set that provides noninterrupting bidirectional delivery and passive waiting; otherwise, including a terminal-only or unconfirmed interface or a long delay, return `AWAITING_ORCHESTRATOR` as a terminal partial and resume deliberately. This portable fallback for child-originated decisions does not prohibit a parent from making a proportionate liveness probe. For Codex live-coordination mechanics, read `harness-defaults/codex-gpt-5.6.md`. Hold the unit, answer or revise the brief, and resume the same worker and context when the unit remains materially unchanged. This is exception handling, not a status channel.
+When observed reality makes a brief boundary conflict with its intent, or two reasonable readings would materially change scope, safety, acceptance, or verification, stop at a safe boundary before inventing a workaround. A child that needs an upstream decision may use a live decision request only on an already-known capability set that provides noninterrupting bidirectional delivery and passive waiting; otherwise, including a terminal-only or unconfirmed interface or a long delay, return `AWAITING_ORCHESTRATOR` as a terminal partial and resume deliberately. This portable fallback for child-originated decisions does not prohibit a proportionate parent-to-child probe. For Codex live-coordination mechanics, read `harness-defaults/codex.md`. Hold the unit, answer or revise the brief, and resume the same worker and context when the unit remains materially unchanged. This is exception handling, not a status channel.
 
 A reviewer evaluates fitness for the claim and consequence currently in scope, not the strongest imaginable future use. Findings do not inherit blocker status merely because they came from review; the top agent maps them to hard boundary, repair, invalidation or claim limitation, or defer. Preserve any approval or independent-review gate explicitly assigned by the task or a protected boundary. Use independent review when unresolved judgment would authorize consequential follow-on work or when crossing a protected promotion boundary, not by default for every result. Keep the verdict durable only when later work must rely on it across contexts or when auditability matters. The reviewer remains separate from the producer and receives the task, result, relevant surface, and evidence — not a desired verdict as ambient truth.
 
@@ -88,7 +86,7 @@ On long or agent-heavy work, occasionally delegate a fresh read-only review of t
 
 Ask the observer to assess objective alignment, concrete progress, proportionality of the operating approach, and closeout readiness, then return a short evidence-grounded assessment and at most one intervention. The observer does not manage workers, maintain project state, or become persistent. This is an aid to reflection, not a liveness guarantee; the top agent remains responsible for invoking it.
 
-Use harness-native call-by-reference when available. For Codex, follow the bounded session-reference guidance in `harness-defaults/codex-gpt-5.6.md`; do not paste a trace tail into the parent context.
+Use harness-native call-by-reference when available. For Codex, follow the bounded session-reference guidance in `harness-defaults/codex.md`; do not paste a trace tail into the parent context.
 
 ## Execute the minimum loop
 
@@ -129,8 +127,8 @@ See `references/closeout.md` for proportionate closeout and final-review trigger
 - `references/game-plan.md` — minimal durable orientation and reconstruction rule.
 - `references/subagent-brief.md` — bounded briefs, selective freshness, worker returns, and consequence-bounded review.
 - `references/coordination-controls.md` — transactional results, provenance gates, and conditional join/receipt handling.
-- `references/execution-leases.md` — repeated, metered, materially long-running, or consequential batch execution.
+- `references/execution-leases.md` — repeated, metered, materially long-running, or consequential execution, including high-stakes atomic one-shots.
 - `references/closeout.md` — proportionate closeout and final-review triggers.
-- `harness-defaults/codex-gpt-5.6.md` — Codex live coordination, routing, and trace-referenced reflection guidance.
+- `harness-defaults/codex.md` — Codex live coordination, routing, and trace-referenced supervision and reflection guidance.
 
 Read a reference only when its trigger applies.

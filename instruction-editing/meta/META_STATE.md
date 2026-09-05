@@ -4,7 +4,7 @@ This file is maintenance context for people or agents editing the `instruction-e
 
 ## Status
 
-- Last updated: 2026-08-10
+- Last updated: 2026-09-05
 - Skill state: active and implemented.
 - Operative source: `../SKILL.md` only.
 
@@ -12,7 +12,7 @@ This file is maintenance context for people or agents editing the `instruction-e
 
 - Treat instruction editing as behavioral design through language.
 - Match the level of prescription to the document's job instead of treating compactness or procedural detail as virtues by themselves.
-- Correct the underlying assumption or working picture before adding more rules.
+- Correct the underlying assumption or working picture when behavior is wrong; preserve it during routine maintenance unless the evidence challenges it.
 - Keep guidance actionable at its intended level: principles direct judgment, procedures stabilize fragile sequences, and requirements state invariants.
 - Preserve real hard boundaries while leaving judgment and freedom where mechanics are not load-bearing.
 - Resist both checklist patching and aphorism collapse.
@@ -23,6 +23,8 @@ This file is maintenance context for people or agents editing the `instruction-e
 - Replace opaque language about instincts and frames with plain descriptions of behavior and likely mistakes.
 - Retain the read-aloud compression check, but make clear that compression must not remove the workflow or boundary that makes guidance actionable.
 - Treat genre and intended decisions as evidence to discover from the document's use, not as a mandatory template inferred from its title.
+- Do not invent a mistaken behavioral frame for routine factual or interface maintenance.
+- Keep ordinary validation mental and proportional; use behavioral testing when it could change acceptance of a consequential revision.
 
 ## Open questions
 

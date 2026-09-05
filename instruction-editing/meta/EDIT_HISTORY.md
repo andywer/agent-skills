@@ -2,6 +2,18 @@
 
 This file is a high-level maintenance history for the `instruction-editing` skill. It is not operative guidance and must not be loaded as a task instruction source. Entries summarize implemented changes and their rationale; they are not diffs.
 
+## 2026-09-05 — Separate behavioral repair from routine maintenance
+
+A review found that the skill treated every instruction edit as evidence of a
+mistaken working model and left its unrelated-case validation ambiguous about
+whether an actual test run was required. Revised the central workflow so
+behavioral failures still receive frame-level repair, while routine updates
+make the smallest accurate change without manufacturing a diagnosis.
+
+Made ordinary validation a proportional mental check and reserved behavioral
+testing for consequential revisions where its evidence could change
+acceptance. This preserves actionability without expanding small edits.
+
 ## 2026-08-10 — Preserve actionability and the document's useful level of prescription
 
 While revising an operating-principles file, the skill's emphasis on working

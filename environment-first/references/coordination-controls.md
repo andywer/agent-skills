@@ -24,7 +24,7 @@ On mismatch, absence, or ambiguity, stop the dependent action or promotion until
 
 Use the lightest append-only dispatch, completion, and artifact-lineage record that makes a real join reconstructible. Instrument every condition in a comparison. Do not call dispatch and spawn atomic unless the harness couples them transactionally.
 
-Distinguish a retry from a duplicate only when that distinction matters downstream. Preserve `unknown`, `unpaired`, or equivalent states when a child, receipt, terminal result, or required field cannot be joined. Use verified polling and artifact inspection when the harness has no join facility; do not infer completion from silence. Keep observation and cancellation distinct: observation informs a decision without changing the work, while cancellation is an explicit authorized stop.
+Distinguish a retry from a duplicate only when that distinction matters downstream. Preserve `unknown`, `unpaired`, or equivalent states when a child, receipt, terminal result, or required field cannot be joined. A join, lifecycle read, or artifact can establish completion or lineage, but it does not replace operational supervision; use the direct-observation or bounded-polling rule in `subagent-brief.md`. Do not infer completion from silence. Keep observation and cancellation distinct: observation informs a decision without changing the work, while cancellation is an explicit authorized stop.
 
 Accept a result only after the material unit identity, evidence, completion, protected-boundary, and artifact-lineage checks pass. Require no field that the claim does not consume. If a missing field prevents the required provenance or safety conclusion, fail closed; otherwise label it unavailable and continue.
 
