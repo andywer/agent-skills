@@ -1,9 +1,15 @@
 ---
 name: exploration-map
-description: Structured recursive decomposition of complex, open-ended questions into a persistent map with scored branches, evidence tracking, and contradiction handling. Use when multiple plausible answers or approaches must be compared, especially for decisions under uncertainty, strategy, research, prioritization, complex debugging or multi-hypothesis root-cause analysis, conflicting artifacts, or pushback on an initial answer. Skip straightforward implementation, lookup, routine debugging, or small decisions.
+description: Structured recursive decomposition of complex, open-ended questions into a persistent map with scored branches, evidence tracking, and contradiction handling. Use when multiple plausible answers or approaches must be compared, especially for decisions under uncertainty, strategy, research, prioritization, complex debugging or multi-hypothesis root-cause analysis, conflicting artifacts, or pushback on an initial answer. Also use to reconstruct an exploration map from prior discussions, session logs, or artifacts. Skip straightforward implementation, lookup, routine debugging, small decisions, or ordinary summaries that do not need a map.
 ---
 
 # Exploration Map
+
+## Choose the workflow
+
+For retrospective reconstruction, read [reconstruction.md](references/reconstruction.md) and use that workflow **instead of** the live exploration instructions below. Recover the recorded inquiry; do not seed alternatives, assign new scores, or resolve its gaps as though that work happened earlier. If asked to continue afterward, retain the recovered map and IDs and distinguish new exploration from its history.
+
+For conducting or continuing an inquiry, use the live workflow below. Compact/full controls map detail, not whether the task is live or retrospective.
 
 Use a recursive map to make the search process visible: seed adjacent branches, deepen the most valuable frontier, track evidence and contradictions, revise the current answer, and switch to validation when more abstraction is no longer useful. Scores steer attention; they are not evidence.
 
@@ -77,6 +83,7 @@ Before delivery, check that high scores have comparative rationales, load-bearin
 
 ## References
 
+- [reconstruction.md](references/reconstruction.md) — retrospective mapping workflow and worked example.
 - [scoring.md](references/scoring.md) — Promise, Actionability, evidence levels, staleness, and risk fields.
 - [sidecars.md](references/sidecars.md) — verification, adversarial, reframe, and frame-escape moves.
 - [example.md](references/example.md) — compact worked map and conflicting-artifact variant.
