@@ -1,6 +1,6 @@
 ---
 name: exploration-map
-description: Structured recursive decomposition of complex, open-ended questions into a persistent map with scored branches, evidence tracking, and contradiction handling. Use when multiple plausible answers or approaches must be compared, especially for decisions under uncertainty, strategy, research, prioritization, complex debugging or multi-hypothesis root-cause analysis, conflicting artifacts, or pushback on an initial answer. Also use to reconstruct an exploration map from prior discussions, session logs, or artifacts. Skip straightforward implementation, lookup, routine debugging, small decisions, or ordinary summaries that do not need a map.
+description: "Use for complex, open-ended questions requiring comparison of alternatives: strategy, research, prioritization, decisions under uncertainty, complex debugging or multi-hypothesis root-cause analysis, conflicting artifacts, and challenged conclusions. Also reconstruct exploration maps from prior discussions, session logs, or artifacts. Produces a persistent map of branches, evidence, and contradictions. Skip routine implementation, lookup, debugging, small decisions, and ordinary summaries."
 ---
 
 # Exploration Map
