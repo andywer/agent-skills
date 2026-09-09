@@ -16,6 +16,10 @@ exact contracts, and proportionate validation. No word cap, template, or testing
 ritual was introduced. These are instruction-design judgments, not measured
 behavioral improvements.
 
+Follow-up review clarified that leaving instructions unchanged means evidence
+does not justify an edit, not that adequacy has been established. Kept the
+compact examples approach; recognition effects remain untested.
+
 ## 2026-09-05 — Separate behavioral repair from routine maintenance
 
 A review found that the skill treated every instruction edit as evidence of a
