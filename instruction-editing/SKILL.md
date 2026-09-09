@@ -13,7 +13,7 @@ Instruction editing is behavioral design through language. Match prescription to
 
 Read the current instructions and the nearest relevant evidence, such as feedback, a run trace, or changed requirements. Identify the document's job, intended decisions, and freedom to preserve; do not infer them from its title.
 
-For a reported failure, identify what, if anything, in the instructions contributed. If they evoke the wrong working model, repair that framing rather than append exceptions. Otherwise clarify the relevant ambiguity or conflict, address missing information, or leave adequate instructions unchanged. For routine maintenance, make the smallest accurate change without inventing a diagnosis.
+For a reported failure, identify what, if anything, in the instructions contributed. If they evoke the wrong working model, repair that framing rather than append exceptions. Otherwise clarify the relevant ambiguity or conflict, address missing information, or leave instructions unchanged when the evidence does not justify an edit. For routine maintenance, make the smallest accurate change without inventing a diagnosis.
 
 Revise the section carrying the issue, aligning related guidance rather than adding competing rules. Judge concision on the resulting document, not the diff. Replace or consolidate overlap; add wording when it changes a choice, exposes a likely mistake, or protects a real boundary.
 
