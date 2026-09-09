@@ -15,6 +15,8 @@ that did not enter the final answer.
 
 Read the available discussion, outcome, and relevant supporting artifacts.
 Reuse an existing map and its IDs rather than rebuilding it unnecessarily.
+For a revision, keep the prior map recoverable and use it as a preservation
+baseline, while checking its account against the sources.
 State the reconstruction date, source coverage or cutoff, and material gaps.
 The outcome helps locate the inquiry; it does not prove the path taken to reach
 it. Outcome-only access permits a limited map of stated rationale, not a claim
@@ -77,12 +79,37 @@ When publishing it as a companion to an outcome, link them in both directions
 without otherwise changing the outcome unless authorized. Verify saved content
 and links where the destination permits it.
 
+## Revise without losing the inquiry
+
+An update must work as a continuation of the previous map, not merely as a
+clearer standalone document. Reorder and regroup freely, but keep identifiers
+attached to their original referents, including evidence and gap IDs. A question
+can evolve without becoming a different question. For real splits or mergers,
+retain the old entry as a route to its successors; do not renumber to match the
+new outline. If an earlier edit reused IDs incorrectly, identify the affected
+revision and record the repair rather than silently rebinding them again.
+
+Account for consequential prior branches when simplifying: keep them, move
+their detail behind a working link, explicitly consolidate them, or explain a
+source-grounded correction. No longer being central is not a reason to lose a
+branch. A title and a caution do not replace the premises, decisive comparison,
+and qualifications needed to revisit it. Remove duplicate narration, not that
+intellectual work; this does not require preserving every sentence.
+
+Keep the trajectory honest. A requirement that was overlooked and later
+recovered was not newly discovered. Distinguish the user's intent from the
+analyst's changing framing, and recorded decisions from your assessment of them.
+
 ## Check fidelity before doing new analysis
 
 Review the map against the sources: can a reader follow a consequential
 change from the original proposal through its challenge to the revised standing?
 Check a non-winning branch too. Look for omitted caveats, invented closure,
 unsupported causal links, and a tidy story organized only around the winner.
+For updates, also compare old and new maps: follow prior IDs and source routes,
+check that changed or displaced branches remain findable, and verify that the
+selected and inactive paths still retain the distinctions needed to revisit
+them. A clean outline or valid-looking IDs do not establish preservation.
 Repair reconstruction errors before delivering the map.
 
 If substantive review or continuation is requested, perform it after this
@@ -137,3 +164,13 @@ next investigation, not a validated solution; the available record ends at S4.
 If S4 were missing, N2 would be "mentioned; later disposition unknown," not
 "deferred until chunking fails." If a current reviewer proposes a new approach,
 that belongs to the new review, not an invented historical branch.
+
+### Revision check
+
+Suppose later evidence makes N2 worth pursuing. It can appear first without
+becoming N1. Keep N1.1's reported obstacle and N1.2's unvalidated status unless
+new evidence changes them; move their detail rather than discard it. If new
+evidence corrects S3, retain S3 as the earlier report and link its correction.
+Restating S1's record-format constraint is recovery, not a new requirement.
+A revision that keeps only "N1: streaming; N2: temporary file" preserves the
+labels but loses the comparison that made the map useful.
