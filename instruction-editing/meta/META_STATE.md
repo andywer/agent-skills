@@ -24,13 +24,20 @@ This file is maintenance context for people or agents editing the `instruction-e
 - Retain the read-aloud compression check, but make clear that compression must not remove the workflow or boundary that makes guidance actionable.
 - Treat genre and intended decisions as evidence to discover from the document's use, not as a mandatory template inferred from its title.
 - Do not invent a behavioral diagnosis for routine maintenance or assume every reported failure warrants an instruction change.
-- Consolidate overlapping guidance before adding more; use short contrasts instead of catalogs of incident-specific examples or boundaries.
+- Consolidate overlapping guidance before adding more. This revision uses one transferable contrast instead of incident catalogs; that is not a ban on examples that expose a missed decision or boundary.
 - Keep ordinary validation mental and proportional; use behavioral testing when it could change acceptance of a consequential revision.
 
-## Open questions
+## Evidence and open tensions
 
-- Which examples most reliably reveal that wording invites procedural compliance instead of good judgment?
-- Which examples reveal the opposite failure, where memorable principles no longer direct action?
+[PR #5](https://github.com/andywer/agent-skills/pull/5) reports a reduction from
+846 to 350 whitespace-delimited words, including front matter. Text review of
+[the proposed revision](https://github.com/andywer/agent-skills/blob/b59abddf7b57c004292f92d21b43a372d8de8bbd/instruction-editing/SKILL.md)
+against the recorded August/September failure modes found no concrete lost
+requirement. Neither that review nor the reported mental walkthroughs establish
+that shorter instructions improve reliability; no model-backed comparison was run.
+
+- Does removing the catalogs weaken recognition of framing errors, procedural compliance, actionless slogans, or evidence boundaries? Retain examples for their discriminating value, not their count.
+- Does the no-change option distinguish adequate instructions from insufficient diagnostic evidence? A reported failure alone proves neither a wording defect nor adequacy.
 - When does a hard boundary need an explicit step rather than a clear behavioral constraint?
 
 ## Maintenance boundary
