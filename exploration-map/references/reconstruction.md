@@ -7,14 +7,15 @@ exploration campaign. A reconstruction may end with unresolved questions.
 
 **Map what was being worked out, not just what was talked about.** Preserve the
 competing possibilities, why they mattered, what supported or challenged them,
-and how their standing changed. Organize around those relationships; use
-chronology to explain transitions, not as the main outline. Keep useful branches
-that did not enter the final answer.
+and how their standing changed. Organize around relationships, using chronology
+to explain transitions. Keep useful non-winning branches. A revision continues
+the previous map; a clearer standalone account is not enough.
 
 ## Establish the source boundary
 
 Read the available discussion, outcome, and relevant supporting artifacts.
-Reuse an existing map and its IDs rather than rebuilding it unnecessarily.
+Keep any prior map recoverable as a preservation baseline, checking its account
+against the sources.
 State the reconstruction date, source coverage or cutoff, and material gaps.
 The outcome helps locate the inquiry; it does not prove the path taken to reach
 it. Outcome-only access permits a limited map of stated rationale, not a claim
@@ -28,31 +29,33 @@ regions. Keep publication within the requested scope and source permissions.
 ## Recover the inquiry
 
 Trace consequential proposals and questions through their premises, evidence,
-objections, comparisons, and revisions. For each important branch, make clear
-what a returning reader would need to understand or reopen it. Connect nodes
-explicitly: evidence can support or weaken a claim; an objection can trigger a
-reframe; a changed condition can reopen an alternative. Co-occurrence and
-chronology alone do not establish those relationships.
+objections, comparisons, and revisions. Connect nodes explicitly: evidence can
+support or weaken a claim; an objection can trigger a reframe; a changed condition
+can reopen an alternative. Co-occurrence and chronology alone do not establish
+those relationships.
 
-Reconstruction requires interpretation. Infer useful organization where the
-sources support it, but distinguish inferred connections from recorded reasons.
-Keep consequential ambiguity visible. Distinguish rejected, deferred,
-superseded, unresolved, and simply no longer discussed; silence is not a
-rejection reason. Preserve recorded scores and reopening conditions, but do not
+Infer useful organization where sources support it, but distinguish inferred
+connections from recorded reasons and changes in the user's intent from changes
+in the analyst's framing. Keep consequential ambiguity visible: rejected, deferred,
+superseded, unresolved, and simply no longer discussed are distinct; silence is
+not rejection. Preserve recorded scores and reopening conditions, but do not
 invent them retrospectively. A reported test is evidence of what was reported,
 not automatically validation of the claim it discusses.
 
-Keep enough detail behind the opening to revisit the actual argument, including
-decisive examples and qualifications. Link load-bearing relationships and
-statuses to exact source passages or evidence entries. If a precise link is
-unavailable, supply a recognizable quotation or source locator and state the
-limit; never fabricate an anchor. A bibliography without node-level connections
-is not enough.
+Retain the premises, decisive comparisons, examples, and qualifications needed
+to revisit important branches, not just their labels. Cut repetition; move or
+consolidate useful detail rather than discard it. Link load-bearing relationships
+and statuses to exact source passages or evidence entries. Without a precise
+link, provide a quotation or recognizable locator and state the limit; never
+fabricate an anchor. A bibliography without node-level connections is not enough.
 
 ## Shape the map for re-entry
 
-Use the parent skill's vocabulary and stable IDs, without forcing every section
-or copying the same account into several ledgers:
+Use the parent skill's vocabulary without forcing every section or duplicating
+ledgers. Keep each ID bound to the same node, evidence, or gap—not its outline
+position. Reorder and regroup without renumbering; scope IDs to their source map.
+For splits or mergers, leave routes from old IDs to successors. Document repairs
+of incorrectly reused IDs and the affected revision.
 
 - **Root question:** quote the original question verbatim where available;
   preserve constraints and consequential changes of scope. Keep distinct roots
@@ -60,9 +63,7 @@ or copying the same account into several ledgers:
 - **Current Best Answer:** the latest recorded answer at the stated cutoff,
   including its status, uncertainty, and recorded conditions for reconsideration.
   Link the outcome rather than silently updating it to today's assessment.
-- **Tree:** recursively organized branches, reasons, source references, and
-  cross-links. Reuse existing IDs; scope IDs from different maps to their origin
-  and never reassign an old ID to a different branch.
+- **Tree:** recursive branches with reasons, source references, and cross-links.
 - **Evidence, contradictions, and gaps:** connect them to the affected nodes.
   Distinguish unresolved questions in the inquiry from gaps in this reconstruction.
 - **Iteration log and archived branches:** retain consequential transitions and
@@ -79,20 +80,20 @@ and links where the destination permits it.
 
 ## Check fidelity before doing new analysis
 
-Review the map against the sources: can a reader follow a consequential
-change from the original proposal through its challenge to the revised standing?
-Check a non-winning branch too. Look for omitted caveats, invented closure,
-unsupported causal links, and a tidy story organized only around the winner.
-Repair reconstruction errors before delivering the map.
+Check the map against sources for omitted caveats, invented closure, unsupported
+causal links, or a story organized only around the winner. Follow a consequential
+change and a non-winning branch. For revisions, compare old and new maps: do
+prior IDs and source routes still lead to the relevant arguments, including
+moved or inactive branches? Repair errors before delivery; keep consequential
+corrections traceable.
 
 If substantive review or continuation is requested, perform it after this
 fidelity check and identify it as new work. A lightweight self-challenge can
 steelman the strongest rival, invert a fragile assumption, and inspect weak or
-stale evidence. Preserve the historical account when recording the result.
-**New since the outcome document is not the same as newly discovered during
-this review.** Check the earlier discussion before labeling a finding new; a
-review need not manufacture a defect. If continuing, use the live workflow with
-the recovered map and IDs rather than starting over.
+stale evidence. Preserve the historical account and check earlier discussion
+before labeling a finding new: recovering an overlooked requirement is not a
+discovery. A review need not find a defect. If continuing, use the live workflow
+with the recovered map and IDs rather than starting over.
 
 ## Worked contrast
 
