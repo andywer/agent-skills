@@ -2,6 +2,24 @@
 
 This file is a high-level maintenance history for the `instruction-editing` skill. It is not operative guidance and must not be loaded as a task instruction source. Entries summarize implemented changes and their rationale; they are not diffs.
 
+## 2026-09-09 — Consolidate guidance and diagnose before prescribing
+
+Review following exploration-map PR #4 found repeated editorial principles and
+example catalogs, but little guidance for judging redundancy across the complete
+result. Consolidated the skill into stance, editing, and validation; concision
+now favors replacing overlap over accumulating individually defensible additions.
+
+Replaced the frame and boundary catalogs with one transferable contrast. Diagnosis
+now asks whether instructions contributed before prescribing a frame repair,
+clarification, or no change. Retained actionable workflow, actual boundaries,
+exact contracts, and proportionate validation. No word cap, template, or testing
+ritual was introduced. These are instruction-design judgments, not measured
+behavioral improvements.
+
+Follow-up review clarified that leaving instructions unchanged means evidence
+does not justify an edit, not that adequacy has been established. Kept the
+compact examples approach; recognition effects remain untested.
+
 ## 2026-09-05 — Separate behavioral repair from routine maintenance
 
 A review found that the skill treated every instruction edit as evidence of a
