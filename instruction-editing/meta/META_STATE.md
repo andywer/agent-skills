@@ -4,7 +4,7 @@ This file is maintenance context for people or agents editing the `instruction-e
 
 ## Status
 
-- Last updated: 2026-09-09
+- Last updated: 2026-09-17
 - Skill state: active and implemented.
 - Operative source: `../SKILL.md` only.
 
@@ -15,6 +15,7 @@ This file is maintenance context for people or agents editing the `instruction-e
 - Diagnose the instructions' contribution before changing them: repair mistaken framing when supported, clarify another defect, or leave guidance unchanged when evidence does not justify an edit.
 - Keep guidance actionable at its intended level: principles direct judgment, procedures stabilize fragile sequences, and requirements state invariants.
 - Preserve real hard boundaries while leaving judgment and freedom where mechanics are not load-bearing.
+- Simplify by removing redundancy, not by merging distinct decisions or safeguards merely to shorten the text.
 - Resist both checklist patching and aphorism collapse.
 
 ## Decisions taken
@@ -26,8 +27,17 @@ This file is maintenance context for people or agents editing the `instruction-e
 - Do not invent a behavioral diagnosis for routine maintenance or assume every reported failure warrants an instruction change. No change is a decision about the evidence for editing, not proof that the instructions are adequate.
 - Consolidate overlapping guidance before adding more. This revision uses one transferable contrast instead of incident catalogs; that is not a ban on examples that expose a missed decision or boundary.
 - Keep ordinary validation mental and proportional; use behavioral testing when it could change acceptance of a consequential revision.
+- Read applicable governing guidance alongside the target and evidence, and keep clear whether the requested result is a critique, a proposed draft, or an authorized edit.
 
 ## Evidence and open tensions
+
+On 2026-09-17, a proposed simplification discarded or weakened several distinct
+behaviors despite the operative skill already warning against aphorism collapse
+and treating fewer words as a non-goal. Independent comparison found losses in
+causal diagnosis, actual-authority preservation, representative validation,
+decision-time recognition, and fragile-procedure safeguards. This supports
+making the preservation rule salient during editing; it does not establish that
+longer instructions are generally more reliable.
 
 [PR #5](https://github.com/andywer/agent-skills/pull/5) reduces the operative skill from
 846 to 357 whitespace-delimited words, including front matter. Initial text review of

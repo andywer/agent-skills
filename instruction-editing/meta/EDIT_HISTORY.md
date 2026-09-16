@@ -2,6 +2,22 @@
 
 This file is a high-level maintenance history for the `instruction-editing` skill. It is not operative guidance and must not be loaded as a task instruction source. Entries summarize implemented changes and their rationale; they are not diffs.
 
+## 2026-09-17 — Preserve distinctions during simplification
+
+A request to simplify the skill produced a proposed rewrite that was shorter but
+merged or weakened distinct guidance about causal diagnosis, actual authority,
+representative validation, decision-time recognition, and fragile procedures.
+Independent reviews rejected that rewrite and showed that the failure was not a
+lack of general advice about concision, but insufficiently careful application
+of the existing advice while drafting.
+
+Added an editing-stage guard: simplification removes redundancy without merging
+distinct decisions or safeguards merely to reduce length. Also made applicable
+governing guidance part of the reading context and clarified the difference
+between a critique, a proposed draft, and an authorized edit. Retained the
+existing behavioral distinctions, examples, and proportional validation rather
+than replacing the skill with a compact abstraction.
+
 ## 2026-09-09 — Consolidate guidance and diagnose before prescribing
 
 Review following exploration-map PR #4 found repeated editorial principles and
