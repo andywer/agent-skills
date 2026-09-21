@@ -5,7 +5,7 @@ description: Use when a run, review, experiment, implementation, agent workflow,
 
 # Failure Investigation
 
-Investigate failures by separating what broke, why it broke, how it escaped, and how to repair it. The goal is not to assign blame or add ceremony. The goal is to prevent false closure and produce a repair plan that targets the root cause instead of the most visible symptom.
+Investigate failures by separating what broke, what initiated it, which containment or recovery failed, how consequences spread, and where a repair will reduce harm or recurrence. The goal is not to assign blame or add ceremony. The goal is to prevent false closure and produce a repair plan that targets the consequential causal chain instead of only the most visible symptom or earliest defect.
 
 ## When To Use
 
@@ -26,12 +26,13 @@ Produce an investigation that answers:
 
 1. What failed?
 2. What invariant or expectation was violated?
-3. Where did the defect originate?
-4. How did it escape detection?
-5. What downstream artifacts, decisions, or claims did it contaminate?
-6. What alternative explanations were checked?
-7. What repair addresses the root cause?
-8. What prevention hooks should be added, if any?
+3. Which conditions initiated the failure, and through what local mechanism?
+4. Which expected containment, recovery, or detection capabilities failed?
+5. Which causes most strongly determine harm or recurrence at the relevant layer?
+6. What downstream artifacts, decisions, or claims did it contaminate?
+7. What alternative explanations were checked?
+8. Which intervention is best supported by expected consequence, recurrence, control, and repair risk?
+9. What prevention hooks should be added, if any?
 
 ## Workflow
 
@@ -41,23 +42,30 @@ Produce an investigation that answers:
    - Define the evidence boundary: which logs, files, reviews, tests, traces, datasets, or source artifacts are authoritative.
 
 2. **Map the timeline**
-   - Identify the originating action or artifact.
-   - Identify each acceptance or propagation step.
-   - Separate origin, escape, amplification, and detection.
+   - Identify the initiating condition or artifact and the local mechanism that turned it into the observed failure.
+   - Identify each containment, recovery, acceptance, propagation, and detection step that mattered.
+   - Separate initiation, mechanism, failed containment or recovery, amplification, escape, and detection when those distinctions explain the outcome. Do not manufacture a layer that the evidence or a simple local failure does not require.
 
 3. **Classify causes**
-   - Root cause: the earliest fixable reason the failure became possible.
-   - Contributing causes: conditions that made it easier or harder to detect.
+   - Initiating causes: conditions or defects that started this instance.
+   - Local mechanism: how the initiating condition produced the immediate failure.
+   - Containment or recovery causes: why an expected, normal disturbance became harmful or remained harmful.
+   - Consequence-driving or systemic causes: conditions that most strongly determine harm or recurrence at the abstraction layer relevant to the user's objective.
+   - Contributing causes: conditions that amplified the failure or made it easier or harder to detect.
    - Non-causes: plausible explanations ruled out by evidence.
+   - Use only categories supported by evidence; one cause may occupy several roles. The earliest fixable event is not automatically the most consequential cause or the best intervention point.
 
 4. **Challenge the current hypothesis**
    - Steelman at least one alternative explanation.
    - Invert one load-bearing assumption.
    - Look for one counterexample that would change the conclusion.
+   - Hold the initiating condition constant and ask what the system should still handle when that condition is normal ambiguity, noise, human error, malformed input, dependency failure, or another expected disturbance.
+   - Conversely, ask whether removing the initiating condition prevents the failure class or only this instance.
    - Revise the diagnosis if the challenge survives.
 
 5. **Design the repair**
-   - Repair the root cause first.
+   - Choose the smallest repair or combination of repairs that materially reduces the relevant harm or recurrence.
+   - Repair avoidable initiating defects and/or missing containment or recovery according to evidence, consequence, recurrence, control, and repair risk; do not give chronological priority by default.
    - Then repair contaminated downstream artifacts.
    - Define the validator or review that must pass before the repair is accepted.
    - State what remains unknown after repair.
@@ -99,8 +107,11 @@ One paragraph with confidence level and what would change it.
 | Step | Event | Role | Fidelity | Evidence | Effect |
 | --- | --- | --- | --- | --- | --- |
 
-## Root Cause
-- Root cause:
+## Causes by Layer
+- Initiating condition or defect:
+- Local mechanism:
+- Failed containment or recovery:
+- Consequence-driving or systemic cause:
 - Contributing causes:
 - Non-causes ruled out:
 
@@ -116,7 +127,7 @@ One paragraph with confidence level and what would change it.
 - Stale claims to retract or mark superseded:
 
 ## Repair Plan
-1. Root repair:
+1. Chosen intervention and priority rationale:
 2. Downstream repair:
 3. Required validator or review:
 4. Stop condition:
