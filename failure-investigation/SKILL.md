@@ -22,23 +22,25 @@ Do not use it for ordinary code review, generic debugging with an obvious fix, o
 
 ## Core Contract
 
-Produce an investigation that answers:
+Use the following questions to guide diagnosis where they could change the conclusion or repair; they are not mandatory report sections:
 
 1. What failed?
 2. What invariant or expectation was violated?
-3. Which conditions initiated the failure, and through what local mechanism?
-4. Which expected containment, recovery, or detection capabilities failed?
-5. Which causes most strongly determine harm or recurrence at the relevant layer?
-6. What downstream artifacts, decisions, or claims did it contaminate?
-7. What alternative explanations were checked?
-8. Which intervention is best supported by expected consequence, recurrence, control, and repair risk?
-9. What prevention hooks should be added, if any?
+3. For a failed system or method, how was the governing outcome supposed to be produced, and which necessary links or assumptions failed or remain untested?
+4. Which conditions initiated the failure, and through what local mechanism?
+5. Which expected containment, recovery, or detection capabilities failed?
+6. Which causes most strongly determine harm or recurrence at the relevant layer?
+7. What downstream artifacts, decisions, or claims did it contaminate?
+8. What alternative explanations were checked?
+9. Which intervention is best supported by expected consequence, recurrence, control, and repair risk?
+10. What prevention hooks should be added, if any?
 
 ## Workflow
 
 1. **Set the failure contract**
    - Name the observed failure.
    - Name the expected invariant, criterion, or claim that failed.
+   - For a system, method, or architecture, trace the intended path from source input through the decisions to the outcome that justified it. Identify necessary quality, scale, or cost assumptions and where the observation diverged.
    - Define the evidence boundary: which logs, files, reviews, tests, traces, datasets, or source artifacts are authoritative.
 
 2. **Map the timeline**
@@ -56,9 +58,7 @@ Produce an investigation that answers:
    - Use only categories supported by evidence; one cause may occupy several roles. The earliest fixable event is not automatically the most consequential cause or the best intervention point.
 
 4. **Challenge the current hypothesis**
-   - Steelman at least one alternative explanation.
-   - Invert one load-bearing assumption.
-   - Look for one counterexample that would change the conclusion.
+   - Check a credible competing explanation when it could change the diagnosis. Use an assumption inversion or counterexample when it adds distinct information. Do not manufacture one of each to complete a ritual.
    - Hold the initiating condition constant and ask what the system should still handle when that condition is normal ambiguity, noise, human error, malformed input, dependency failure, or another expected disturbance.
    - Conversely, ask whether removing the initiating condition prevents the failure class or only this instance.
    - Revise the diagnosis if the challenge survives.
@@ -67,7 +67,7 @@ Produce an investigation that answers:
    - Choose the smallest repair or combination of repairs that materially reduces the relevant harm or recurrence.
    - Repair avoidable initiating defects and/or missing containment or recovery according to evidence, consequence, recurrence, control, and repair risk; do not give chronological priority by default.
    - Then repair contaminated downstream artifacts.
-   - Define the validator or review that must pass before the repair is accepted.
+   - Choose a proportionate observation or check that could show whether the repair worked; reuse an existing check when adequate. For a system or method, test the governing outcome and any claimed quality or cost advantage, not only the local error.
    - State what remains unknown after repair.
 
 6. **Add prevention only where it pays rent**
@@ -77,7 +77,7 @@ Produce an investigation that answers:
 
 ## Evidence Discipline
 
-Use fidelity labels for load-bearing claims:
+Distinguish the evidence status of load-bearing claims in ordinary prose. These terms may help; they are not required fields:
 
 - `observed`: directly present in a source artifact, log, test output, diff, review, or trace.
 - `derived`: follows from observed facts and explicit rules.
@@ -87,80 +87,15 @@ Use fidelity labels for load-bearing claims:
 
 Do not promote an inferred cause into an observed fact. If a conclusion depends on an inference, say what evidence would confirm or falsify it.
 
-## Output Shape
+## Communicate the diagnosis and repair
 
-Use this shape for durable investigations; compress it for small failures.
+Explain the observed failure, the best-supported cause and its evidence, the repair and how to check it, and material uncertainty. Use a timeline or causal diagram only when the sequence is needed to understand the mechanism. Persist a concise note in an existing project document when later work will depend on it; do not create a new investigation package or fixed report format by default.
 
-```markdown
-# Failure Investigation
+## Prevention
 
-## Failure Contract
-- Observed failure:
-- Expected invariant:
-- Scope:
-- Evidence boundary:
+First consider removing an unnecessary component, simplifying an interface or correcting the faulty behavior. Add a rule, helper, schema field, validator or review step only if it would catch or contain the demonstrated failure and the objective cannot reasonably be protected more simply. Apply the same test to existing controls during review.
 
-## Current Diagnosis
-One paragraph with confidence level and what would change it.
-
-## Timeline / Causal Trace
-| Step | Event | Role | Fidelity | Evidence | Effect |
-| --- | --- | --- | --- | --- | --- |
-
-## Causes by Layer
-- Initiating condition or defect:
-- Local mechanism:
-- Failed containment or recovery:
-- Consequence-driving or systemic cause:
-- Contributing causes:
-- Non-causes ruled out:
-
-## Challenge Pass
-- Alternative explanation tested:
-- Assumption inverted:
-- Counterexample search:
-- Diagnosis revision:
-
-## Contamination / Blast Radius
-- Affected artifacts or decisions:
-- Unaffected artifacts or decisions:
-- Stale claims to retract or mark superseded:
-
-## Repair Plan
-1. Chosen intervention and priority rationale:
-2. Downstream repair:
-3. Required validator or review:
-4. Stop condition:
-
-## Prevention Hooks
-- Deterministic checks:
-- Judgmental review checks:
-- Process or contract changes:
-- Hooks rejected as not worth it:
-
-## Residual Risk
-- Unknowns:
-- Reopen trigger:
-```
-
-## Prevention Guidance
-
-A prevention hook should be specific enough that a future agent can apply it without reconstructing the whole incident.
-
-Good hooks:
-
-- schema or contract fields that make missing evidence visible;
-- validators for file existence, parseability, count parity, references, freshness, or reproducibility;
-- review rubric items tied to the failed invariant;
-- required source anchors for claims that drive decisions;
-- final-gate checks for downstream artifacts that consume an earlier result.
-
-Weak hooks:
-
-- broad reminders to be careful;
-- extra review with no changed review question;
-- validators that only check wording style when the failure was semantic;
-- process steps whose pass/fail result would not change acceptance.
+Preserve required safety and evidence boundaries. Reuse checks and native records where adequate. Broad reminders, extra review without a specific unresolved question, and validators of wording for a semantic failure do not establish prevention. A useful repair may require no new process.
 
 ## Relationship To Other Skills
 
