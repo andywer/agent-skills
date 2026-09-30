@@ -2,6 +2,18 @@
 
 This file is a high-level maintenance history for the `instruction-editing` skill. It is not operative guidance and must not be loaded as a task instruction source. Entries summarize implemented changes and their rationale; they are not diffs.
 
+## 2026-09-30 — Guide editorial judgment without a fixed procedure
+
+Rewrote the operative skill as contextual guidance for capable agents, with
+three thematic headings. Removed prescribed editing routines and repeated
+general framing while retaining judgment about both instructions and the work
+they require, related guidance, distinct decisions and safeguards, actual
+boundaries, required exact forms, concrete language, and careful example use.
+
+Independent Astra reviews checked semantic losses and editorial quality.
+Structural validation passed. These reviews support the wording's clarity and
+coverage; no behavioral comparison established improved performance.
+
 ## 2026-09-17 — Preserve distinctions during simplification
 
 A request to simplify the skill produced a proposed rewrite that was shorter but

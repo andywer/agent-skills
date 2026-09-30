@@ -4,7 +4,7 @@ This file is maintenance context for people or agents editing the `instruction-e
 
 ## Status
 
-- Last updated: 2026-09-17
+- Last updated: 2026-09-30
 - Skill state: active and implemented.
 - Operative source: `../SKILL.md` only.
 
@@ -19,6 +19,17 @@ This file is maintenance context for people or agents editing the `instruction-e
 - Resist both checklist patching and aphorism collapse.
 
 ## Decisions taken
+
+On 2026-09-30, replaced the procedural editing and validation framing with
+contextual guidance under Purpose and context, Editorial judgment, and
+Boundaries and review. The revision retains the necessity test for prescribed
+work, coherence and consequential distinctions, actual boundaries, exact
+contractual or fragile-procedure forms, and concrete language and examples.
+Read-aloud and fixed case/counterexample checks are now optional techniques,
+not prescribed steps. Astra reviewed the wording and semantic coverage;
+behavioral improvement remains untested.
+
+The earlier decisions below are historical where superseded by this revision.
 
 - Keep a single operative skill file and make maintenance context explicitly non-operative.
 - Replace opaque language about instincts and frames with plain descriptions of behavior and likely mistakes.

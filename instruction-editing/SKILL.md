@@ -1,24 +1,24 @@
 ---
 name: instruction-editing
-description: Use when editing prompts, AGENTS.md files, role instructions, shared policies, operational principles, or other agent guidance. Make wording guide the intended decisions while preserving real boundaries.
+description: Review and revise agent instructions, including prompts, AGENTS.md files, and skills, to clarify intended decisions without adding unnecessary procedure or weakening real constraints.
 ---
 
 # Instruction Editing
 
-## Stance
+## Purpose and context
 
-Instruction editing is behavioral design through language. Match prescription to the document's job: principles direct judgment, procedures stabilize fragile sequences, and requirements state real invariants. Make the next choice and likely mistake easy to recognize without prescribing mechanics that do not protect the result. Neither more rules nor fewer words are goals in themselves.
+Write instructions that make the intended choices clear and leave room for judgment in the current task. Principles suit adaptable work; fixed steps and precise requirements earn their place where correctness, permissions, or a fragile sequence depends on them.
 
-## Read, diagnose, edit
+The user's request sets the scope and whether the result is a review, a proposal, or an applied edit. Read the current instructions, applicable governing guidance, and relevant evidence to understand their purpose and the context the agent will reliably receive. Within that scope, a section rewrite can be appropriate when its framing no longer serves that purpose.
 
-Read the current instructions, applicable governing guidance, and the nearest relevant evidence, such as feedback, a run trace, or changed requirements. Identify the document's job, intended decisions, and freedom to preserve; do not infer them from its title. Keep clear whether the requested result is a critique, a proposed draft, or an authorized edit.
+## Editorial judgment
 
-For a reported failure, identify what, if anything, in the instructions contributed. If they evoke the wrong working model, repair that framing rather than append exceptions. Otherwise clarify the relevant ambiguity or conflict, address missing information, or leave instructions unchanged when the evidence does not justify an edit. For routine maintenance, make the smallest accurate change without inventing a diagnosis.
+Consider both the guidance and the work it prescribes: are they needed for the intended outcome, and could a simpler approach do the same job? A plausible safeguard may add little when the agent already receives the needed guidance elsewhere. Keep related instructions coherent and consolidate overlap without erasing distinct decisions, safeguards, or necessary steps. Preserving inherited wording and reducing word count are both poor substitutes for improving the result.
 
-Revise the section carrying the issue, aligning related guidance rather than adding competing rules. Judge concision on the resulting document, not the diff. Replace or consolidate overlap; when simplifying, remove redundancy without merging distinct decisions or safeguards merely to shorten the text. Add wording when it changes a choice, exposes a likely mistake, or protects a real boundary.
+When a failure motivates an edit, assess whether the instructions contributed. Repair misleading framing or consequential ambiguity where the evidence supports it. Clear guidance that was not followed may need a different remedy; adding another rule does not establish that the failure has been addressed.
 
-Preserve the document's actual authority, permission, and evidence boundaries explicitly. A preferred layout can change; required publication approval cannot be removed as an editorial simplification. Use examples to expose such relationships, not to import case-specific rules. Preserve exact wording or structure where it is part of a contract or safeguards a fragile procedure.
+## Boundaries and review
 
-## Validate
+Preserve actual authority, permission, and evidence boundaries. Their wording and placement can change if the agent will still reliably receive and understand them; a standalone section needs the boundaries relevant to its use. Preserve exact wording or structure where that form is contractual or essential to a fragile procedure.
 
-Read the complete result from the consuming agent's perspective: can it choose the intended action without losing necessary freedom or boundaries? Read it aloud and recast policy-like or case-specific passages in plain language without compressing useful workflow into slogans. Mentally check a representative case and a nearby counterexample, including whether simplification removed a necessary step. Run a behavioral test only when its evidence could change acceptance of a consequential revision.
+Review the result from the consuming agent's perspective. Concrete language and well-chosen examples should make the next choice and likely mistake recognizable, without turning incidental case details into policy. Examples or behavioral checks are useful when they can resolve a material uncertainty about how the wording will work.
