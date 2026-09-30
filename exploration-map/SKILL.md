@@ -1,90 +1,46 @@
 ---
 name: exploration-map
-description: "Use for complex, open-ended questions requiring comparison of alternatives: strategy, research, prioritization, decisions under uncertainty, complex debugging or multi-hypothesis root-cause analysis, conflicting artifacts, and challenged conclusions. Also reconstruct exploration maps from prior discussions, session logs, or artifacts. Produces a persistent map of branches, evidence, and contradictions. Skip routine implementation, lookup, debugging, small decisions, and ordinary summaries."
+description: "Use for complex, open-ended questions requiring comparison of alternatives: strategy, research, prioritization, decisions under uncertainty, complex debugging or multi-hypothesis root-cause analysis, conflicting artifacts, and challenged conclusions. Also reconstruct exploration maps from prior discussions, session logs, or artifacts. Organizes branches, evidence, and contradictions to guide the inquiry. Skip routine implementation, lookup, debugging, small decisions, and ordinary summaries."
 ---
 
 # Exploration Map
 
-## Choose the workflow
+Use a map to retain competing explanations or options, the evidence that distinguishes them, and what would change the answer. It is a guiding representation for an inquiry: it can live in working memory, appear inline in conversation, or be saved in a note. The map serves the decision; producing or maintaining a document is not progress by itself.
 
-For retrospective reconstruction, read [reconstruction.md](references/reconstruction.md) and use that workflow **instead of** the live exploration instructions below. Recover the recorded inquiry; do not seed alternatives, assign new scores, or resolve its gaps as though that work happened earlier. If asked to continue afterward, retain the recovered map and IDs and distinguish new exploration from its history.
+For retrospective reconstruction, use [reconstruction.md](references/reconstruction.md) instead of inventing new exploration. Preserve recorded uncertainty and distinguish later analysis from the historical inquiry.
 
-For conducting or continuing an inquiry, use the live workflow below. Compact/full controls map detail, not whether the task is live or retrospective.
+## Keep the useful reasoning recoverable
 
-Use a recursive map to make the search process visible: seed adjacent branches, deepen the most valuable frontier, track evidence and contradictions, revise the current answer, and switch to validation when more abstraction is no longer useful. Scores steer attention; they are not evidence.
+Start with the actual question, plausible alternatives, relevant evidence and uncertainty, and the next observation likely to change the answer. Choose the map's lifetime and location for the work. Keep it ephemeral when the active context is sufficient. Persist the useful parts when the user requests an artifact or when handoff, coordination or later resumption needs a durable account. Reuse a relevant decision note or save a focused note for that inquiry; `MAP.md` is an optional filename, not a required central project asset. Separate inquiries can have separate maps, with links to shared evidence where useful. Do not create a file merely because this skill is active.
 
-## Start and working state
+Use ordinary prose or bullets to show how alternatives, subquestions, evidence and objections relate. Deepen a branch when its mechanism or assumptions matter; preserve that relationship in the map. Avoid a flat topic list that loses the reasoning, but do not add hierarchy merely to fill a tree. Fixed sections, node IDs, numeric scores, evidence enums, iteration logs and separate registers are optional: use one only when a concrete navigation, comparison or recovery need cannot reasonably be met more simply. Preserve existing IDs when other material links to them.
 
-Activate this skill only when the question deserves recursive exploration. At activation, create a task-local `MAP.md` before substantive exploration and persist it through the end of the task. Both modes use `MAP.md`: compact mode may omit empty bookkeeping; full mode uses the complete working state below. If the task is too small for a map, do not activate this skill.
+Keep the user's question and constraints faithful; quote exact wording when it matters. Link load-bearing claims to the evidence supporting them and distinguish observations from explanations. Keep unresolved contradictions and meaningful rejected alternatives visible, without copying the full history into each update.
 
-Use compact mode for a genuinely map-worthy question with few branches and one or two expected iterations; keep the map terse. Use full mode when branches survive scrutiny, evidence may conflict, the decision is hard to reverse, or the question needs repeated frontier work.
+The map is working state, not primary evidence. Before a handoff or context-loss boundary, preserve the reasoning needed to continue if it is not already recoverable from the conversation or maintained artifacts. After compaction or restart, recover the relevant map from the available context or notes, re-read governing documentation, and inspect the source material needed for the next decision or conflict. Do not assume ephemeral context survived or reread every linked artifact automatically. Integrate worker findings into the inquiry's current map; a shared file is needed only when it helps coordination.
 
-Start solo. Do not estimate complexity in advance to choose orchestration. Escalate only when observed runtime pressure shows either:
+## Investigate what could change the decision
 
-- the live frontier contains disjoint assignments that are each valuable; or
-- the source or state load can no longer be handled reliably in one context.
+Choose the next comparison, probe or source read by its likely effect on the answer. Explore another alternative when the current framing may be incomplete; examine a mechanism when it explains a concrete observed failure. Do not invent branches merely to make the tree deeper or wider.
 
-Treat `MAP.md` as the authoritative working state across compaction or restart. Source artifacts remain authoritative evidence. After compaction or restart, re-read `MAP.md` and every referenced source artifact before continuing. The main agent is the sole writer of `MAP.md`; workers return deltas for the main agent to synthesize.
+For design and review, test necessity as well as correctness: what tangible contribution does each proposed or existing component, specification, rule, helper or format make, and could the objective reasonably be achieved without it or with something simpler? Demonstrate a claimed defect on an in-scope case before optimizing its repair. Keep untested concerns as hypotheses.
 
-Do not add dispatch directories, JSON protocols, fixed critique cadences, separate budget files, or other orchestration machinery. Revisit defaults only after the same failure recurs across comparable runs, not after one anomaly.
+When remaining uncertainty is empirical, run the appropriate bounded check rather than expand the map. Establish needed access and permissions, but record a separate access plan only if coordination or later recovery needs it. See [sidecars.md](references/sidecars.md) for optional ways to challenge or verify an answer.
 
-## Build the map
+Update the working map when evidence changes the answer, an important alternative, or the next action; update a saved note when that change needs to survive the current inquiry. Preserve consequential reversals and their reasons; do not log each tool call or score revision. Use [scoring.md](references/scoring.md) only if explicit scoring would materially improve comparison.
 
-In full mode, create `MAP.md` with these sections, in this order. In compact mode, start with Root question, Current Best Answer, Tree, and Gaps; add another section only when the work produces something worth tracking there.
+## Delegate and review when they add value
 
-1. **Root question** — quote the user's question verbatim, then record constraints and the analysis as-of date. Never paraphrase the root question.
-2. **Current Best Answer** — one provisional paragraph with confidence and the specific finding that would change it.
-3. **Tree** — recursive nodes with stable hierarchical IDs.
-4. **Evidence register** — each load-bearing claim with type, level, source, and as-of date.
-5. **Contradiction ledger** — conflicts between evidence or conclusions, open or resolved.
-6. **Gaps** — unexplored or unresolved angles.
-7. **Iteration log** — one line per iteration describing the selected frontier and the change.
-8. **Appendix: archived branches** — pruned nodes and their kill reasons; never reuse IDs.
+Work directly unless separate context or parallel work provides a concrete benefit. Follow the user's delegation instructions. Workers need the question, one bounded assignment and relevant sources; their return can be findings, evidence and remaining uncertainty in ordinary prose. See [escalation.md](references/escalation.md).
 
-Seed the first adjacent nodes, such as options, affected parties, success criteria, root problems, capabilities and limits, candidate solutions, and validation paths. For design critique, do not optimize a repair before demonstrating its failure on a concrete in-scope path; until then, keep it as a hypothesis. Give important nodes children or an explicit terminal reason. Use the node format below and keep the tree relational rather than a flat list:
+Challenge the answer with a credible rival or an observation that could falsify it. Use an independent reviewer when unresolved judgment or integration risk could materially change the decision, or when required by the user. Delegation alone does not require another reviewer. A review should explain any defect and its consequence; it needs no fixed verdict vocabulary or automatic re-review cycle.
 
-```markdown
-- [N2.3] Title (P:4 A:2 | frontier)
-  rationale: P4 because X versus sibling N2.1; A2 because blocked on Z
-  risk: downside=med, reversible=yes, deadline=none
-```
-
-Use stable IDs such as `N1`, `N1.2`, and `N1.2.1`. In full mode, or once compact branches require comparison, score Promise (P) and Actionability (A) from 0–5, with a one-line rationale comparing a named sibling. Add risk fields when a decision has meaningful downside. Keep evidence level separate from promise and actionability; a promising branch may still be unvalidated or blocked. See [scoring.md](references/scoring.md).
-
-## Explore and update
-
-For each iteration:
-
-1. Select one frontier item by value of information: likely change to the Current Best Answer per unit effort. Break ties by deadline, then downside if wrong. Do not select by raw promise alone.
-2. Choose `breadth` when alternatives may be missing, `depth` when one branch needs mechanism or risks, or a `sidecar` when the next uncertainty needs bounded evidence, validation, or an artifact.
-3. Expand the selected node, gather or verify evidence, or resolve a contradiction. Label claims as `fact`, `inference`, or `hypothesis`.
-4. Update the tree, evidence register, contradiction ledger, score revisions, Current Best Answer, gaps, and one iteration-log line. Never silently overwrite a score or conclusion.
-5. Run the anti-flatness check: each iteration must deepen, reconcile, or reframe the map, not merely append siblings.
-
-Before promoting a sidecar, record required data, the direct access path, credible proxy evidence, and the condition that blocks progress. A decision-relevant frontier should end in a state such as `validated enough to pilot`, `needs proxy evidence`, `blocked pending access`, `defer / switch branch`, or `handoff artifact ready`. If further abstraction is lower-value, switch to the sidecar, proxy check, data request, pilot plan, prototype, or other concrete artifact instead of stopping early. See [sidecars.md](references/sidecars.md).
-
-When workers are justified, give each only the verbatim root question, one branch, and relevant evidence. Require findings, evidence items, contradictions, score changes with rationales, and blockers. Synthesize once in `MAP.md`; do not paste worker output wholesale. See [escalation.md](references/escalation.md).
-
-## Stop, switch, and review
-
-Stop abstract expansion when new branches mostly repeat existing ones, the ranking is stable after challenge, the remaining uncertainty is empirical, or the leading branch is blocked and no credible proxy move is available. Continue in execution mode whenever a runnable validation or handoff artifact remains.
-
-Stop the whole loop only when the Current Best Answer is stable, no open contradiction could change it, every material gap is explored or explicitly accepted, and the next required action is unavailable or the validation-enabling artifact exists. If the deciding evidence is unavailable, state `blocked` and why; do not turn an assertion into a confident answer.
-
-For ordinary solo work, perform one lightweight final self-challenge: steelman the strongest rival, invert the most fragile load-bearing assumption, and identify the weakest or stalest load-bearing evidence. Record any finding in `MAP.md` before finalizing.
-
-Before optimizing a proposed remedy, ask whether the claimed defect is in scope and whether no change, a clarification, or an ordinary implementation choice would suffice. Use a fresh reviewer only when multiple agents contributed to a load-bearing conclusion, the decision is high-downside or irreversible, material evidence remains disputed or stale, or the user requests independent verification. The reviewer returns one verdict: `ACCEPT`, `REPAIR`, `REOPEN`, or `BLOCKED`. A localized defect permits one bounded repair followed by re-review; a structural gap reopens exploration.
-
-## Limits
-
-Use practical limits of at most 12 iterations and 40 active nodes unless the user supplies different limits. When the active-node cap is reached, archive the weakest branch with a rationale before adding more. If a run hits a limit, report the current answer and open items rather than continuing silently.
-
-Before delivery, check that high scores have comparative rationales, load-bearing claims have evidence levels and dates, contradictions are not silently resolved, sidecars have a concrete next action or blocked condition, and the final answer is derived from `MAP.md`.
+Stop exploration when the evidence is adequate for the decision in scope, or when the missing evidence cannot currently be obtained. State the material uncertainty and next action; do not require every imaginable gap to be closed. Continue authorized execution when it is the useful next step. Respect task budgets and stop when further investigation has little decision value; do not create node or iteration accounting merely to manage the map.
 
 ## References
 
-- [reconstruction.md](references/reconstruction.md) — retrospective mapping workflow and worked example.
-- [scoring.md](references/scoring.md) — Promise, Actionability, evidence levels, staleness, and risk fields.
-- [sidecars.md](references/sidecars.md) — verification, adversarial, reframe, and frame-escape moves.
-- [example.md](references/example.md) — compact worked map and conflicting-artifact variant.
-- [escalation.md](references/escalation.md) — optional delegation and fresh-review guidance.
+- [reconstruction.md](references/reconstruction.md) — recover a prior inquiry without rewriting its history.
+- [scoring.md](references/scoring.md) — optional comparative scoring and evidence judgment.
+- [sidecars.md](references/sidecars.md) — concrete verification and challenge moves.
+- [example.md](references/example.md) — a short map with competing explanations.
+- [escalation.md](references/escalation.md) — bounded delegation and independent review.

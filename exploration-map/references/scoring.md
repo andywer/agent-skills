@@ -1,6 +1,6 @@
 # Scoring rubrics
 
-Scores are relative within the map, not absolute. A rationale that does not name a sibling is incomplete.
+Use these rubrics only when explicit scoring materially improves comparison; ordinary prose is sufficient otherwise. Scores are relative within the map, not evidence or acceptance gates. Explain the tradeoff when it changes the choice; no named-sibling rationale is required for every score.
 
 ## Promise (P)
 
@@ -36,16 +36,16 @@ Keep Actionability separate from Promise. A high-promise branch can be blocked.
 - **L3 — reconciled:** conflicting sources were logged and resolved, or retained as an explicit range
 - **L4 — tested against reality:** supported by an experiment, held-out check, or observed real-world outcome
 
-The Current Best Answer needs L2+ support for load-bearing claims. A branch with `downside=high` and `reversible=no` needs L3+ before it can support the answer.
+These labels can describe existing maps, but their numbers are not a universal ranking of evidence strength. Judge what the actual source and method establish: a direct measurement may settle a question that several correlated summaries cannot. Require evidence adequate to the claim and consequence, not a fixed source count or ladder level.
 
 ## Staleness and risk
 
-Give every evidence item an `as-of` date and a half-life: `stable`, `quarters`, `weeks`, or `days`. Mark it **STALE** when one half-life has passed relative to the analysis date. Stale evidence keeps its level but cannot be the sole support for a load-bearing claim.
+Check dates when the facts may have changed. Reverify consequential stale information or qualify the conclusion; do not assign artificial half-lives to every source.
 
-For decisions, record:
+When they affect the decision, these optional fields may help:
 
 - `downside`: `low`, `med`, or `high` if wrong
 - `reversible`: `yes` or `no`
 - `deadline`: a date or `none`
 
-These fields affect frontier selection and the minimum evidence needed. Score revisions must state the node, field, old and new values, and the evidence or contradiction that caused the change. Re-read both affected branches before accepting a revision that changes the Current Best Answer.
+Use these considerations to choose the next useful check and the evidence needed. Preserve reasons for consequential changes in the answer; do not maintain a log of every score revision.

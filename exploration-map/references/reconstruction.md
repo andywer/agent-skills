@@ -70,13 +70,15 @@ of incorrectly reused IDs and the affected revision.
   useful inactive paths with their recorded reasons. Cross-reference their nodes
   instead of duplicating the tree as a second recap.
 
-Compact/full is a choice of detail, not a different format. Show the current
-position and high-leverage tensions early, with depth available behind them.
+Choose detail and structure for the inquiry being recovered; the listed sections
+are options, not a required format. Show the current position and important
+tensions early, with depth available where useful.
 Do not force every branch to acquire children, a score, or a conclusive ending.
-Store the map in the requested location, or use `MAP.md` for a local artifact.
-When publishing it as a companion to an outcome, link them in both directions
-without otherwise changing the outcome unless authorized. Verify saved content
-and links where the destination permits it.
+Deliver the map in the requested form. An inline reconstruction can be sufficient;
+save a focused note when requested or needed for later use, following the parent
+skill's persistence guidance. When publishing it as a companion to an outcome,
+link them in both directions without otherwise changing the outcome unless
+authorized. Verify saved content and links where the destination permits it.
 
 ## Check fidelity before doing new analysis
 
