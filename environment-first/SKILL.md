@@ -1,29 +1,29 @@
 ---
 name: environment-first
-description: "Use for complex or error-compounding work — deep research, multi-source analysis, refactors, audits, migrations, or tasks where hidden state, consequential risk, delegation, repeated execution, or deferred obligations can make mistakes expensive. Reach the natural result or evidence path through the smallest safe reversible slice; do not complete an environment first. Keep the top agent lean and add durable state, delegation, provenance, transactional handling, execution leases, or independent review only when a concrete hazard calls for them."
+description: "Use for complex or error-compounding work — deep research, multi-source analysis, refactors, audits, migrations, or tasks where hidden state, consequential risk, delegation, repeated execution, or deferred obligations can make mistakes expensive. Reach the natural result or a coherent experiment early; narrow the work when a concrete obstacle or risk requires it, rather than completing an environment first. Keep the top agent lean and add durable state, delegation, provenance, transactional handling, execution leases, or independent review only when a concrete hazard calls for them."
 ---
 
 # Environment-first
 
-Environment-first means reaching the natural result or evidence path early enough to learn what environment the work actually needs; it does not mean completing an environment first. When that path can be touched reversibly without crossing a hard boundary, begin with the thinnest end-to-end slice that preserves the claim currently in scope. Let observed failure, not imagined future use, reveal which additional controls pay rent.
+Environment-first means reaching the natural result or evidence path early enough to learn what environment the work actually needs; it does not mean completing an environment first. Begin with coherent end-to-end work that can change the answer to the governing question. Narrow the slice when an unproven interface, a concrete hazard or an observed failure calls for diagnosis; do not split an informative experiment into many tiny demonstrations by default. Let observed needs, not imagined future use, determine additional controls.
 
 ## Start with the smallest sufficient environment
 
 Work directly when the task is clear, local, reversible, and comfortably fits one context. Inspect only the tools, permissions, inputs, mutable state, and result surfaces the task will actually touch. Perform ordinary task-proportionate verification. Do not create a plan, packet, checklist, reviewer, or ledger merely because the skill triggered.
 
-Add a control only for a concrete hazard:
+Add or retain a control only when it addresses a concrete hazard and ordinary task work cannot reasonably handle it more simply. During design and review, apply that necessity test to components, specs, rules, helpers, formats and process steps; do not produce a separate justification record. Possible needs include:
 
 - externalize acceptance-critical obligations when context loss or delay could hide them;
 - give delegated work a bounded brief;
 - protect irreplaceable or accepted results transactionally;
 - require provenance when downstream work depends on an evidence class;
-- lease repeated work when it consumes material time, budget, capacity, or consequential mutations, and bound consequential atomic one-shots before authorizing them;
+- bound material spending or consequential mutations with an enforceable cap and relevant stop conditions; use a renewal mechanism only when continuation decisions need one;
 - use independent review when semantic judgment or integration is consequential;
 - use joinable receipts only when asynchronous or comparative execution actually needs them.
 
 Decide what a hazard can harm and whether the observation is recoverable. A credible threat to user control, people, secrets, permissions, protected or irreplaceable data, or irreversible external state is a hard boundary and may block the slice. So may a validity defect that would irreversibly contaminate scarce evidence or make the slice uninterpretable. A defect that only lowers confidence in a reversible observation should normally narrow the claim, add an invalidation condition, or motivate one cheap canary. Controls needed only for future scale, polish, or reproducibility wait; acceptance-critical reproducibility and pre-outcome protections do not.
 
-If a hazard is only suspected, take one cheap reversible probe. If it is known, activate the relevant control immediately. Drop a control when its trigger no longer applies. Never preserve a heavy operating mode merely because it began.
+If uncertainty about a hazard could change the next action, use a cheap reversible probe when useful. For a known hazard, use the simplest adequate protection. Drop a control when its trigger no longer applies. Never preserve a heavy operating mode merely because it began.
 
 ## Keep the top agent a lean executive
 
@@ -54,13 +54,13 @@ Use `references/game-plan.md` only when a durable orientation is genuinely neede
 
 Probe the real environment before relying on an interface, permission, isolation claim, mutable input, or promotion path. Reuse a valid existing environment or result lineage after checking identity, freshness, and scope.
 
-Validate the claim, not the shape of the implementation. For a load-bearing change, keep in view what must remain true and use the cheapest credible observation that could expose a failure. Make that check structural only when omission would affect safety or acceptance, and reuse its evidence until a later change could affect the claim it supports. Prefer deterministic checks for mechanical claims. Use a different fresh context for a consequential semantic challenge; do not add semantic review where an adequate deterministic check already settles the claim.
+Validate the claim, not the shape of the implementation. For a load-bearing change, keep in view what must remain true and use the cheapest credible observation that could expose a failure. Make that check structural only when omission would affect safety or acceptance, and reuse its evidence until a later change could affect the claim it supports. Prefer deterministic checks for mechanical claims. Use a fresh context when independent semantic judgment would materially improve a consequential decision; do not add review where adequate checks already settle the claim.
 
-Think smoke test before the real run. When the real run is protected, held out, scarce, or acceptance-bearing, first send a harmless specimen through the same path that makes the claim true. A surrogate proves only the part it exercised. Say what claim the smoke test supports, and do not let approval travel farther. If it cannot cross the live boundary, name that boundary as untested before deciding whether to proceed.
+Before a protected, held-out, scarce or acceptance-bearing run, check whether its execution path is already adequately established. If it is unproven or materially changed, send a harmless specimen through that path first; reuse an adequate prior check when its conditions still apply. A surrogate proves only the part it exercised. Say what claim the smoke test supports, and do not let approval travel farther. If it cannot cross the live boundary, name that boundary as untested before deciding whether to proceed.
 
 Protect accepted and irreplaceable result surfaces: write candidates separately, validate them, then promote. Before an unavoidable in-place transformation of irreplaceable data, create and verify a rollback copy.
 
-For provenance gates, asynchronous joins, protected promotion, and transactional details, read `references/coordination-controls.md` only when one of those hazards is present. Read `references/execution-leases.md` before repeated or metered consequential execution, or before a consequential atomic one-shot that can fan out, materially consume a scarce cap, resist safe retry, or leave consequential partial state.
+For provenance gates, asynchronous joins, protected promotion, and transactional details, read `references/coordination-controls.md` only when one of those hazards is present. Read `references/execution-leases.md` when material spending, unsafe retries or partial state make execution bounds consequential. Repetition or metering alone does not require leases, receipts or renewed approval.
 
 ## Delegate shallowly and deliberately
 
@@ -82,7 +82,7 @@ A reviewer evaluates fitness for the claim and consequence currently in scope, n
 
 ## Use sparse operations reflection
 
-On long or agent-heavy work, occasionally delegate a fresh read-only review of the top agent's operations at a high-leverage decision boundary: before increasing coordination complexity, after repeated unsuccessful repair, or before closing a consequential run.
+When observed drift or repeated unsuccessful repair remains hard to diagnose, a fresh read-only review of the top agent's operations may help. Use one only if ordinary reflection cannot reasonably settle the issue; duration, delegation or closeout alone does not require an observer.
 
 Ask the observer to assess objective alignment, concrete progress, proportionality of the operating approach, and closeout readiness, then return a short evidence-grounded assessment and at most one intervention. The observer does not manage workers, maintain project state, or become persistent. This is an aid to reflection, not a liveness guarantee; the top agent remains responsible for invoking it.
 
@@ -127,7 +127,7 @@ See `references/closeout.md` for proportionate closeout and final-review trigger
 - `references/game-plan.md` — minimal durable orientation and reconstruction rule.
 - `references/subagent-brief.md` — bounded briefs, selective freshness, worker returns, and consequence-bounded review.
 - `references/coordination-controls.md` — transactional results, provenance gates, and conditional join/receipt handling.
-- `references/execution-leases.md` — repeated, metered, materially long-running, or consequential execution, including high-stakes atomic one-shots.
+- `references/execution-leases.md` — caps and stop conditions for material spending, unsafe retries or consequential partial state; renewal only when needed.
 - `references/closeout.md` — proportionate closeout and final-review triggers.
 - `harness-defaults/codex.md` — Codex live coordination, routing, and trace-referenced supervision and reflection guidance.
 

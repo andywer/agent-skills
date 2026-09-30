@@ -4,7 +4,7 @@ This file is maintenance context for people or agents editing the `environment-f
 
 ## Status
 
-- Last updated: 2026-09-05
+- Last updated: 2026-09-24
 - Skill state: active and implemented.
 - Operative sources: `../SKILL.md`, `../references/`, and `../harness-defaults/`.
 
@@ -25,11 +25,11 @@ This file is maintenance context for people or agents editing the `environment-f
 - Use a compact `Done / Still missing / Blocked or deferred / Next` projection only when persistence is needed.
 - Add controls from concrete hazards and remove them when their trigger ends.
 - Validate the claim a result must support rather than the implementation shape; make structural checks conditional on safety or acceptance.
-- Treat a harmless specimen as the smoke test before a consequential live run; a surrogate proves only what it exercises, and approval stops at the claim that evidence supports.
+- Use a harmless specimen when a consequential execution path is unproven or materially changed; reuse adequate prior checks. A surrogate proves only what it exercises.
 - Calibrate review to the claim and consequence currently in scope. Review findings do not automatically become blockers; the top agent maps them to hard boundaries, repair, invalidation or claim limitation, or defer, while preserving explicitly assigned approval and protected-review gates.
-- Preserve transactional artifact safety, evidence provenance, protected boundaries, execution leases for scarce operations, and producer/reviewer independence when review is required.
+- Preserve transactional artifact safety, evidence provenance, protected boundaries, enforceable resource limits, and producer/reviewer independence when review is required.
 - Count progress in objective output, decision-changing evidence, or a defensible blocker. Scaffolding counts only when the result path consumes it or it changes a decision.
-- Use inline caps, stop conditions, and terminal receipts for a first safe proving unit by default; build durable lease machinery before repetition or when the first invocation can fan out, materially consume a scarce cap, resist safe retry, or leave consequential partial state.
+- Use ordinary caps, stop conditions and native records where sufficient. Add renewal or durable accounting only when continuation decisions or shared resources cannot reasonably be managed without them. Repetition alone does not require lease machinery.
 - Use context freshness selectively: warm same-unit repair may save reconstruction; fresh review preserves independence where it matters.
 - Keep detailed coordination state off the top agent's orientation and on the surfaces that actually consume it.
 - Use sparse trace-referenced operations reflection as an advisory aid, not a persistent monitor or liveness guarantee.
@@ -37,6 +37,8 @@ This file is maintenance context for people or agents editing the `environment-f
 - Close proportionately; a fresh final reviewer is required by integration risk, not by entry into a named mode.
 
 ## Decisions taken
+
+The 24 September revision supersedes the older default of a thinnest proving unit and durable leases before repetition: choose coherent decision-changing work, narrow for actual hazards, and reuse adequate checks. Earlier decisions below remain as history.
 
 - Route consequential atomic one-shots to execution-leases bounded authorization as well as repeated and metered work.
 - Supervise delegated operations for alignment and fitness; lifecycle state and result artifacts do not substitute for operation-level observation.

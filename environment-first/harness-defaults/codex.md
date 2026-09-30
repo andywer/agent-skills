@@ -6,7 +6,7 @@ Use these defaults when this skill is running in the Codex harness. Treat coordi
 
 Use a plausible efficient model for ordinary bounded work. Escalate after an observed gap or when a load-bearing specialist, synthesis, or review risk justifies it. Treat model tier and price as resource labels rather than capability boundaries.
 
-For consequential routing or evaluation design, consult the dated capability map at `~/.codex/model-capabilities/README.md`, refresh fields that may be stale, and run a small canary on the actual task and evaluator. Do not turn this evidence discipline into ceremony for normal work.
+When model routing materially affects the outcome, consult the dated capability map at `~/.codex/model-capabilities/README.md` and refresh stale fields. Run a canary on the actual task and evaluator only when establishing a reusable routing policy or when model uncertainty is itself load-bearing; do not benchmark merely to dispatch ordinary work.
 
 Do not assign a stronger model merely because it is the top agent. The top agent should remain a lean decision and integration point; use specialist capability where the task actually needs it.
 

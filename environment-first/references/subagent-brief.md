@@ -14,7 +14,7 @@ Give the worker:
 - **Boundaries** — what not to touch or decide.
 - **Sources** — the exact files, artifacts, interfaces, or links needed.
 
-Add a budget only when cost, time, attempts, or blast radius can change continuation. If repeated or metered consequential execution is allowed, attach the relevant execution lease. For a consequential atomic one-shot that can fan out, materially consume a scarce cap, resist safe retry, or leave consequential partial state, attach the reference's bounded-authorization rule instead. A worker's prose budget does not constrain an external operation it launches.
+Add a budget only when cost, time, attempts or blast radius can change continuation, and enforce it at the operation that consumes the resource. Use ordinary tool limits or a simple cap where sufficient. Attach renewal or accounting machinery only when intermediate decisions or shared resources require it; repeated paid calls alone do not.
 
 When different interpretations, methods, or workarounds could produce similarly plausible endpoints, ask the worker to surface material changes that could make the result unusable; ordinary choices remain the worker's. Supervise the operations at points where drift could change acceptance rather than judging only the finished artifact.
 
@@ -54,6 +54,6 @@ Keep routine narration quiet. Prefer a direct trace, session span, or activity s
 
 Use a separate fresh reviewer when the result crosses a consequential boundary: irreversible action, protected evidence, high-blast-radius synthesis, difficult semantic judgment, or integration that can introduce new errors. Prefer deterministic verification for mechanical claims.
 
-The reviewer checks the result against the task and evidence, then returns `accept`, `revise`, or `reject` with specific support. It does not produce the fix. Keep the verdict on a durable surface only when later contexts, promotion, or audit must rely on it; otherwise a bounded chat verdict is sufficient.
+The reviewer checks the result against the task and evidence, including whether its components and process are reasonably necessary or could be simplified. Return concrete findings and their consequences in ordinary prose; no verdict enum is required. Keep independent assessment separate from producing the fix. Keep the verdict on a durable surface only when later contexts, promotion, or audit must rely on it; otherwise a bounded chat verdict is sufficient.
 
 Do not stack reviews unless each one addresses a distinct live risk. A repair needs re-review of the defect and changed surface, not a ritual replay of every settled question.

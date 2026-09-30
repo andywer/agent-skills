@@ -22,7 +22,7 @@ On mismatch, absence, or ambiguity, stop the dependent action or promotion until
 
 ## Join asynchronous or comparative work only when necessary
 
-Use the lightest append-only dispatch, completion, and artifact-lineage record that makes a real join reconstructible. Instrument every condition in a comparison. Do not call dispatch and spawn atomic unless the harness couples them transactionally.
+Use native task identities, returned results and existing evidence to join work. Add a custom dispatch or completion record only when a consequential join cannot otherwise be reconstructed. Measure comparison conditions consistently without requiring identical scaffolding. Do not call dispatch and spawn atomic unless the harness couples them transactionally.
 
 Distinguish a retry from a duplicate only when that distinction matters downstream. Preserve `unknown`, `unpaired`, or equivalent states when a child, receipt, terminal result, or required field cannot be joined. A join, lifecycle read, or artifact can establish completion or lineage, but it does not replace operational supervision; use the direct-observation or bounded-polling rule in `subagent-brief.md`. Do not infer completion from silence. Keep observation and cancellation distinct: observation informs a decision without changing the work, while cancellation is an explicit authorized stop.
 
