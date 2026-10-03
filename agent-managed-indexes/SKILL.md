@@ -34,7 +34,7 @@ Do not use this skill for every collection of notes. If a flat index would add m
 3. Rank the matching routes by specificity and priority.
 4. Follow the best candidate route.
 5. Use wikilinks for related routes or sub-routes when they help navigation.
-6. Update consolidation notes after using or changing a route.
+6. Update consolidation notes when a changed route, ambiguity or finding affects future routing.
 7. If routing behavior has shifted, rewrite the index entry point.
 
 ## Suggested Directory Shape
