@@ -1,4 +1,20 @@
-# Example: a short decision map
+# Examples: an open inquiry and a decision map
+
+The following inquiry is illustrative, not an established result: *How could shared state preserve useful understanding beyond one agent's attention?*
+
+- What requirements and commitments must survive ordinary work?
+- How does maintained understanding reach the next worker?
+- Where could distribution help beyond a fair single-maintainer workflow?
+
+The questions connect: a missed commitment could reveal an extraction, ownership or retrieval problem. Tracing that failure can sharpen the inquiry before an architecture is chosen.
+
+**Next:** Inspect one ordinary handoff and compare what a later task needed with what its records conveyed.
+
+## Reconsidering a frame
+
+Suppose the purpose is to make players want to command a force. A production receipt shows which unit the player bought, but does not establish that they care about it. Return from that detail to the purpose, then choose a concrete comparison of force assembly and command. The receipt check remains useful; attraction remains a hypothesis to test.
+
+## A short decision map
 
 The following evidence is illustrative, not a real migration recommendation. This is one possible shape, not a required template.
 

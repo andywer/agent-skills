@@ -1,10 +1,10 @@
 # META FILE — NOT TASK INSTRUCTIONS
 
-This file is maintenance context for people or agents editing the `environment-first` skill. It is intentionally outside the operative instruction path. Do not treat it as task guidance or policy authority.
+This file is maintenance context for people or agents editing the `complex-work` skill, formerly `environment-first`. It is intentionally outside the operative instruction path. Do not treat it as task guidance or policy authority.
 
 ## Status
 
-- Last updated: 2026-09-24
+- Last updated: 2026-10-02
 - Skill state: active and implemented.
 - Operative sources: `../SKILL.md`, `../references/`, and `../harness-defaults/`.
 
@@ -22,7 +22,7 @@ This file is maintenance context for people or agents editing the `environment-f
 - Prefer direct operational observation. When no direct view exists, use bounded polling as a necessary fallback despite its distraction cost and the added truthfulness and accuracy risk of worker-authored status.
 - Preserve terminal partial-return and deliberate resume as the portable fallback for a child-originated material decision request when a suitable live return channel is unavailable or delay is long; this does not make parent-to-child liveness probes useless.
 - Treat material brief-versus-reality tension as a decision checkpoint: hold, answer, and resume the same worker when the unit remains unchanged.
-- Use a compact `Done / Still missing / Blocked or deferred / Next` projection only when persistence is needed.
+- Preserve purpose, requirements, relevant explored approaches, accepted results, remaining work and the next useful action across context loss or handoff. Status headings are optional; persistence is conditional on later use.
 - Add controls from concrete hazards and remove them when their trigger ends.
 - Validate the claim a result must support rather than the implementation shape; make structural checks conditional on safety or acceptance.
 - Use a harmless specimen when a consequential execution path is unproven or materially changed; reuse adequate prior checks. A surrogate proves only what it exercises.
@@ -37,6 +37,8 @@ This file is maintenance context for people or agents editing the `environment-f
 - Close proportionately; a fresh final reviewer is required by integration risk, not by entry into a named mode.
 
 ## Decisions taken
+
+The 2 October refactor renames the skill to `complex-work`, makes purpose-complete orientation explicit and keeps the operating core short with conditional routes to existing mechanics. Early interpretation/method supervision and pre-action protections remain in the entrypoint. This is editorial clarification; historical case review did not establish a performance gain or a wording cure for objective drift. Earlier names and decisions below remain historical context.
 
 The 24 September revision supersedes the older default of a thinnest proving unit and durable leases before repetition: choose coherent decision-changing work, narrow for actual hazards, and reuse adequate checks. Earlier decisions below remain as history.
 

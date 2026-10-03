@@ -1,6 +1,27 @@
 # META FILE — NOT TASK INSTRUCTIONS
 
-This file is a high-level maintenance history for the `environment-first` skill. It is not operative guidance and must not be loaded as a task instruction source. Entries summarize implemented changes and their rationale; they are not diffs.
+This file is a high-level maintenance history for the `complex-work` skill, formerly `environment-first`. It is not operative guidance and must not be loaded as a task instruction source. Entries summarize implemented changes and their rationale; they are not diffs.
+
+## 2026-10-02 — Rename and simplify the operating core
+
+Renamed `environment-first` to `complex-work` and shortened discovery metadata
+to its compounding context, state, coordination and consequential-action cues.
+Made objective, underlying intent, requirements and relevant explored approaches
+explicit in orientation, with optional status headings and source pointers.
+
+Kept early interpretation/method supervision, coherent progress, claim-relative
+verification, pre-action data and evidence protection, atomic spending bounds,
+material contract tension and review independence in the main skill. Existing
+references retain detailed return protocols, coordination mechanics, accounting
+and sparse Codex reflection; their concrete triggers route readers before the
+affected action. No new supervisor, compulsory map or monitoring role was added.
+
+The associated repository refactor folds useful whole/detail reasoning into
+`exploration-map`, makes walkthrough forms optional and preserves the installed
+goal-writing and failure-investigation improvements. Astra challenged the
+proposal; Sol reviewed recent actual uses. Those reviews support clarification
+and retaining useful safeguards, not demonstrated prevention of past failures
+or improved activation from the new names and descriptions.
 
 ## 2026-09-05 — Supervise operations and expose atomic controls
 

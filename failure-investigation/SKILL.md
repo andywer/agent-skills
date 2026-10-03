@@ -99,7 +99,7 @@ Preserve required safety and evidence boundaries. Reuse checks and native record
 
 ## Relationship To Other Skills
 
-- Use `paper-process-walkthrough` when the failure is mainly a process trace across source artifacts.
-- Use `exploration-map` when several competing root-cause branches remain live after the first pass.
-- Use `environment-first` to keep consequential investigations on the smallest real evidence path. Use an explicitly scoped multi-agent workflow only when the repair itself has become a multi-unit, acceptance-bearing program; delegation alone is not the trigger.
+- Draw on `paper-process-walkthrough` for source-grounded tracing when the causal path spans artifacts; it supplies a technique, not a second required workflow or deliverable.
+- Use `exploration-map` when investigating a failure with competing plausible causes, conflicting evidence, or uncertainty that could materially change the repair or assessment of the approach. Start when that uncertainty becomes apparent. Reuse an existing decision note or map to track explanations, supporting and contradicting evidence, and the next useful check. Skip it when the cause and repair are already clear.
+- Draw on `complex-work` when changing state, coordination or consequential evidence boundaries require additional operating guidance. Use an explicitly scoped multi-agent workflow only when the repair itself has become a multi-unit, acceptance-bearing program; delegation alone is not the trigger.
 - Turn the repair plan into a concise handoff when another person or agent must execute it; include the scope, expected outcome, and required validator.
