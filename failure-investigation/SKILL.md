@@ -1,11 +1,13 @@
 ---
 name: failure-investigation
-description: Use when a run, review, experiment, implementation, agent workflow, or artifact has failed or produced a suspect result and the user wants root cause analysis, causal trace, hypothesis challenge, repair planning, or recurrence prevention. Especially useful for contradictory artifacts, failed final gates, regressions, bad reviews, invalid evidence, or cases where a prior acceptance may have been premature.
+description: Investigate failed or suspect results, inefficient processes, or work that is not closing in on its goal despite successful individual steps. Use for causal diagnosis, challenging explanations, choosing repairs, and preventing recurrence, including reviews of AI-agent processes.
 ---
 
-# Failure Investigation
+# Failure and Process Investigation
 
-Investigate failures by separating what broke, what initiated it, which containment or recovery failed, how consequences spread, and where a repair will reduce harm or recurrence. The goal is not to assign blame or add ceremony. The goal is to prevent false closure and produce a repair plan that targets the consequential causal chain instead of only the most visible symptom or earliest defect.
+Explain why the intended outcome was not achieved, or why achieving it took unsatisfactory effort. Individual steps can succeed while the overall process makes little useful progress.
+
+Separate what went wrong, how it happened, why recovery or containment did not suffice, and how consequences spread. Choose an intervention that improves the complete outcome, rather than treating the most visible symptom or earliest defect as the whole problem.
 
 ## When To Use
 
@@ -16,34 +18,24 @@ Use this skill when:
 - artifacts contradict each other;
 - a result depends on evidence that may not support it;
 - a regression has unclear origin;
+- a process consumes excessive resources, repeats work, or makes little progress toward its goal;
 - the user asks to investigate, trace to root, challenge hypotheses, or prevent recurrence.
 
 Do not use it for ordinary code review, generic debugging with an obvious fix, or broad project summaries. Use a lighter direct workflow when the failure is local and the cause is already clear.
 
-## Core Contract
-
-Use the following questions to guide diagnosis where they could change the conclusion or repair; they are not mandatory report sections:
-
-1. What failed?
-2. What invariant or expectation was violated?
-3. For a failed system or method, how was the governing outcome supposed to be produced, and which necessary links or assumptions failed or remain untested?
-4. Which conditions initiated the failure, and through what local mechanism?
-5. Which expected containment, recovery, or detection capabilities failed?
-6. Which causes most strongly determine harm or recurrence at the relevant layer?
-7. What downstream artifacts, decisions, or claims did it contaminate?
-8. What alternative explanations were checked?
-9. Which intervention is best supported by expected consequence, recurrence, control, and repair risk?
-10. What prevention hooks should be added, if any?
-
 ## Workflow
 
-1. **Set the failure contract**
-   - Name the observed failure.
-   - Name the expected invariant, criterion, or claim that failed.
-   - For a system, method, or architecture, trace the intended path from source input through the decisions to the outcome that justified it. Identify necessary quality, scale, or cost assumptions and where the observation diverged.
-   - Define the evidence boundary: which logs, files, reviews, tests, traces, datasets, or source artifacts are authoritative.
+Use these questions where they could change the diagnosis or intervention. They are not sequential gates or mandatory report sections. Start with the whole outcome and investigate particular steps when the evidence warrants it.
 
-2. **Map the timeline**
+1. **Establish the intended outcome**
+   - Recover the governing goal from the user's mandate. Distinguish the desired outcome from documents, completed steps or other intermediate outputs. If the goal is missing, propose a working interpretation; clarify material uncertainty rather than silently choosing a convenient objective.
+   - Name the observed shortfall and what meaningful progress or success would look like, including relevant quality, pace or cost expectations. Resolving an uncertainty can be progress when it changes a consequential decision.
+   - Clarify actual requirements, safety boundaries and resource limits. Separate them from preferences, assumptions and inherited procedures. Unclear constraints do not automatically call for more rules; unnecessary or conflicting rules may be part of the problem.
+   - Identify the relevant evidence and its authority. Preserve the original expectation, but be willing to question whether it was reasonable or whether the evaluation judged the outcome correctly.
+
+2. **Trace the necessary work and the actual process**
+   - From the goal and constraints, reason about what work is needed before accepting the existing steps. Could a step be omitted or replaced by something simpler without losing required behavior?
+   - For each consequential stage, identify the needed inputs, expected useful output and how subsequent work uses it. Compare these expectations with observations; include handoffs, waiting, repeated work and feedback loops. Expectations are hypotheses, not proof of a process defect.
    - Identify the initiating condition or artifact and the local mechanism that turned it into the observed failure.
    - Identify each containment, recovery, acceptance, propagation, and detection step that mattered.
    - Separate initiation, mechanism, failed containment or recovery, amplification, escape, and detection when those distinctions explain the outcome. Do not manufacture a layer that the evidence or a simple local failure does not require.
@@ -64,7 +56,7 @@ Use the following questions to guide diagnosis where they could change the concl
    - Revise the diagnosis if the challenge survives.
 
 5. **Design the repair**
-   - Choose the smallest repair or combination of repairs that materially reduces the relevant harm or recurrence.
+   - Choose the smallest repair or combination of repairs that materially improves the complete outcome or reduces the relevant harm or recurrence. This may mean removing work, changing task selection or stopping an unproductive approach. If causes remain uncertain, choose the next observation that could distinguish them instead of prescribing a speculative repair.
    - Repair avoidable initiating defects and/or missing containment or recovery according to evidence, consequence, recurrence, control, and repair risk; do not give chronological priority by default.
    - Then repair contaminated downstream artifacts.
    - Choose a proportionate observation or check that could show whether the repair worked; reuse an existing check when adequate. For a system or method, test the governing outcome and any claimed quality or cost advantage, not only the local error.
@@ -74,6 +66,32 @@ Use the following questions to guide diagnosis where they could change the concl
    - Prefer prevention hooks that catch the same failure mode early.
    - Match the verification method to the claim: use deterministic checks for mechanical properties and sourced review for meaning, causality, or judgment.
    - Do not add process that would not have caught this failure or changed the next decision.
+
+## Observe progress and effort
+
+Start with available evidence. Distinguish useful outcomes from activity counts, and both from diagnostic signals such as retries, waiting or lost information. Add observation only where missing evidence could change the diagnosis or intervention; do not make comprehensive instrumentation a prerequisite.
+
+For efficiency questions, account for relevant resource usage across the complete useful outcome: elapsed time, model or compute consumption, human effort, coordination, rework and maintenance. Use the precision the decision needs. Separate elapsed time from total work and avoid double-counting overlapping activity. Include the cost of the investigation itself.
+
+A long duration alone does not establish avoidable waste, and fewer calls do not establish a better result. Compare against the required quality and a credible expectation or simpler alternative; state uncertainty when the comparison is not established.
+
+## Inspect the working state in AI-agent processes
+
+For AI-agent process reviews, inspect the instructions, documents and summaries the agent uses to understand its work. Make this part of the causal investigation, not a separate documentation audit.
+
+**What did the agent actually see?**  
+Check the versions it received or opened. Useful information may exist elsewhere without ever reaching the agent.
+
+**Can it find and work with what it needs?**  
+Look at how subjects are organized and connected. Notice repeated reading, duplicated accounts, buried details, or information split across so many places that the agent must reconstruct it each time. Large documents and prose are not inherently bad; judge whether their shape helps this task.
+
+**Is the content a sound basis for action?**  
+Check for missing, stale or conflicting information. Can the agent distinguish current decisions from proposals and historical conclusions? Are important uncertainties and supporting sources visible?
+
+**How did that state affect the result?**  
+Trace a consequential decision from the available information to the agent's action. Did it receive a poor account, select the wrong one, misinterpret a good one, or act incorrectly despite understanding it?
+
+Use the findings to choose a focused repair. Do not reorganize everything without evidence that doing so would help.
 
 ## Evidence Discipline
 
@@ -89,7 +107,7 @@ Do not promote an inferred cause into an observed fact. If a conclusion depends 
 
 ## Communicate the diagnosis and repair
 
-Explain the observed failure, the best-supported cause and its evidence, the repair and how to check it, and material uncertainty. Use a timeline or causal diagram only when the sequence is needed to understand the mechanism. Persist a concise note in an existing project document when later work will depend on it; do not create a new investigation package or fixed report format by default.
+Explain the observed shortfall, the best-supported cause and its evidence, the chosen intervention or next discriminating observation, how to check its effect, and material uncertainty. Stop investigating when the evidence is sufficient for the next consequential decision or further investigation would not justify its cost. Use a timeline or causal diagram only when it helps explain the mechanism. Persist a concise note in an existing project document when later work will depend on it; do not create a new investigation package or fixed report format by default.
 
 ## Prevention
 
