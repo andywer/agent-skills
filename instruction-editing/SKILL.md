@@ -13,7 +13,7 @@ The user's request sets the scope and whether the result is a review, a proposal
 
 ## Editorial judgment
 
-Consider both the guidance and the work it prescribes: are they needed for the intended outcome, and could a simpler approach do the same job? A plausible safeguard may add little when the agent already receives the needed guidance elsewhere. Keep related instructions coherent and consolidate overlap without erasing distinct decisions, safeguards, or necessary steps. Preserving inherited wording and reducing word count are both poor substitutes for improving the result.
+Consider both the guidance and the work it prescribes: are they needed for the intended outcome, and could a simpler approach do the same job? A plausible safeguard may add little when the agent already receives the needed guidance elsewhere. Revise the existing passage that governs the decision, consolidating overlap and resolving contradictions there. Add a separate rule only when no existing passage fits. Preserve distinct decisions, safeguards and necessary steps, and review the replacement in its surrounding text. Preserving inherited wording and reducing word count are both poor substitutes for improving the result.
 
 When a failure motivates an edit, assess whether the instructions contributed. Repair misleading framing or consequential ambiguity where the evidence supports it. Clear guidance that was not followed may need a different remedy; adding another rule does not establish that the failure has been addressed.
 
